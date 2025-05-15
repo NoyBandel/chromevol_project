@@ -1,0 +1,65 @@
+# After all families and functions have been successfully executed and the run step is complete
+# before running py scripts: conda activate chromevol
+
+### ----first--- convert raw results for each transition type into a complete csv file ###
+py scrtipt: raw_results_to_csv.py
+script path: "/groups/itay_mayrose/noybandel/ChromEvol_project/scripts/raw_results_to_csv.py"
+input arguments:
+raw_results_path = path to the raw results folder (which contains all the families folders)
+analysis_output_folder = path to the analysis output folder (can be empty)
+command example: 
+python /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/raw_results_to_csv.py /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results_test_1_family /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis_1_family/
+
+
+### lin, exp analysis ###
+py scrtipt: exp_param_to_csv
+script path: "/groups/itay_mayrose/noybandel/ChromEvol_project/scripts/exp_param_to_csv.py"
+input arguments:
+csv_data_folder = directory containing csv result file (the outputs of raw_results_to_csv)
+analysis_output_folder = directory of the exponential analysis folder
+transitions_res_file_name = baseNum_raw_results.csv demi_raw_results.csv dupl_raw_results.csv gain_raw_results.csv loss_raw_results.csv
+command example: 
+python /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/exp_param_to_csv.py /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis_1_family/ /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis_1_family/exponential_analysis/ baseNum_raw_results.csv demi_raw_results.csv dupl_raw_results.csv gain_raw_results.csv loss_raw_results.csv
+
+
+py scrtipt: linear_param_to_csv
+script path: "/groups/itay_mayrose/noybandel/ChromEvol_project/scripts/exp_param_to_csv.py"
+input arguments:
+csv_data_folder = directory containing csv result file (the outputs of raw_results_to_csv)
+analysis_output_folder = directory of the linear analysis folder
+transitions_res_file_name = baseNum_raw_results.csv demi_raw_results.csv dupl_raw_results.csv gain_raw_results.csv loss_raw_results.csv
+command example: 
+python /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/linear_param_to_csv.py /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis_1_family/ /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis_1_family/linear_analysis/ baseNum_raw_results.csv demi_raw_results.csv dupl_raw_results.csv gain_raw_results.csv loss_raw_results.csv
+
+
+### chosen model analysis ###
+# create csv files:
+# 1 - for each transition: chosen model for each family (lowest AICc)
+# 2 - for all transition:  chosen model for each family (lowest AICc)
+# 2 - for all transition:  chosen model for each family (lowest AICc), including it's parameters
+py scrtipt: create_chosen_model_file
+script path: "/groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_chosen_model_file.py"
+input arguments:
+analysis_folder = Directory containing the analysis output files (can be empty initially).
+--transitions_res_file_name = List of raw result file names for each transition type.
+--chrom_param_mapping: A dictionary mapping chromosomal model names to parameter labels.
+--transitions: List of transition names (base names of the result files).
+command example: 
+python /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_chosen_model_file.py \
+    /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis_50_to_99/const_except_for_tested/ \
+    --transitions_res_file_name baseNum_raw_results.csv demi_raw_results.csv dupl_raw_results.csv gain_raw_results.csv loss_raw_results.csv \
+    --chrom_param_mapping "{'linear': 'LINEAR', 'linear-bd': 'LINEAR_BD', 'exponential': 'EXP', 'reverse-sigmoid': 'REVERSE_SIGMOID', 'log-normal': 'LOGNORMAL', 'ignore': 'IGNORE', 'constant': 'CONST'}" \
+    --transitions baseNum demi dupl gain loss
+
+
+# calculate akaike weights:
+
+"/groups/itay_mayrose/noybandel/ChromEvol_project/scripts/calculate_akaike_weights.py"
+
+
+
+
+
+
+
+

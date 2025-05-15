@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="055b2652-80dc-4c86-87b5-b93f6170e4d8" name="noybandel@powerslurm-login3.tau.ac.il">
+        <fileTransfer accessType="SFTP" host="powerslurm-login3.tau.ac.il" port="22" sshConfigId="12756df4-d596-475e-8cb8-1443ee124aee" sshConfig="noybandel@powerslurm-login3.tau.ac.il:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,900 @@
+Submitted batch job 311744
+Submitted batch job 311745
+Submitted batch job 311746
+Submitted batch job 311747
+Submitted batch job 311748
+Submitted batch job 311749
+Submitted batch job 311750
+Submitted batch job 311751
+Submitted batch job 311752
+Submitted batch job 311753
+Submitted batch job 311754
+Submitted batch job 311755
+Submitted batch job 311756
+Submitted batch job 311757
+Submitted batch job 311758
+Submitted batch job 311759
+Submitted batch job 311760
+Submitted batch job 311761
+Submitted batch job 311762
+Submitted batch job 311763
+Submitted batch job 311764
+Submitted batch job 311765
+Submitted batch job 311766
+Submitted batch job 311767
+Submitted batch job 311768
+Submitted batch job 311769
+Submitted batch job 311770
+Submitted batch job 311772
+Submitted batch job 311773
+Submitted batch job 311774
+Submitted batch job 311775
+Submitted batch job 311776
+Submitted batch job 311777
+Submitted batch job 311778
+Submitted batch job 311779
+Submitted batch job 311780
+Submitted batch job 311781
+Submitted batch job 311783
+Submitted batch job 311784
+Submitted batch job 311782
+Submitted batch job 311785
+Submitted batch job 311786
+Submitted batch job 311787
+Submitted batch job 311788
+Submitted batch job 311789
+Submitted batch job 311790
+Submitted batch job 311791
+Submitted batch job 311792
+Submitted batch job 311793
+Submitted batch job 311794
+Submitted batch job 311795
+Submitted batch job 311796
+Submitted batch job 311798
+Submitted batch job 311799
+Submitted batch job 311797
+Submitted batch job 311800
+Submitted batch job 311801
+Submitted batch job 311802
+Submitted batch job 311803
+Submitted batch job 311804
+Submitted batch job 311805
+Submitted batch job 311806
+Submitted batch job 311807
+Submitted batch job 311808
+Submitted batch job 311809
+Submitted batch job 311810
+Submitted batch job 311811
+Submitted batch job 311812
+Submitted batch job 311813
+Submitted batch job 311814
+Submitted batch job 311815
+Submitted batch job 311816
+Submitted batch job 311819
+Submitted batch job 311818
+Submitted batch job 311817
+Submitted batch job 311821
+Submitted batch job 311822
+Submitted batch job 311823
+Submitted batch job 311824
+Submitted batch job 311825
+Submitted batch job 311826
+Submitted batch job 311827
+Submitted batch job 311828
+Submitted batch job 311829
+Submitted batch job 311830
+Submitted batch job 311831
+Submitted batch job 311834
+Submitted batch job 311833
+Submitted batch job 311832
+Submitted batch job 311835
+Submitted batch job 311836
+Submitted batch job 311837
+Submitted batch job 311840
+Submitted batch job 311839
+Submitted batch job 311838
+Submitted batch job 311841
+Submitted batch job 311842
+Submitted batch job 311843
+Submitted batch job 311844
+Submitted batch job 311845
+Submitted batch job 311846
+Submitted batch job 311847
+Submitted batch job 311848
+Submitted batch job 311849
+Submitted batch job 311850
+Submitted batch job 311851
+Submitted batch job 311852
+Submitted batch job 311853
+Submitted batch job 311854
+Submitted batch job 311855
+Submitted batch job 311856
+Submitted batch job 311857
+Submitted batch job 311858
+Submitted batch job 311859
+Submitted batch job 311860
+Submitted batch job 311861
+Submitted batch job 311862
+Submitted batch job 311863
+Submitted batch job 311864
+Submitted batch job 311865
+Submitted batch job 311866
+Submitted batch job 311867
+Submitted batch job 311868
+Submitted batch job 311869
+Submitted batch job 311870
+Submitted batch job 311871
+Submitted batch job 311872
+Submitted batch job 311873
+Submitted batch job 311874
+Submitted batch job 311875
+Submitted batch job 311876
+Submitted batch job 311877
+Submitted batch job 311878
+Submitted batch job 311879
+Submitted batch job 311880
+Submitted batch job 311881
+Submitted batch job 311882
+Submitted batch job 311883
+Submitted batch job 311884
+Submitted batch job 311885
+Submitted batch job 311886
+Submitted batch job 311887
+Submitted batch job 311888
+Submitted batch job 311889
+Submitted batch job 311890
+Submitted batch job 311891
+Submitted batch job 311892
+Submitted batch job 311893
+Submitted batch job 311894
+Submitted batch job 311895
+Submitted batch job 311896
+Submitted batch job 311897
+Submitted batch job 311898
+Submitted batch job 311899
+Submitted batch job 311900
+Submitted batch job 311901
+Submitted batch job 311902
+Submitted batch job 311903
+Submitted batch job 311904
+Submitted batch job 311905
+Submitted batch job 311906
+Submitted batch job 311907
+Submitted batch job 311908
+Submitted batch job 311909
+Submitted batch job 311910
+Submitted batch job 311911
+Submitted batch job 311912
+Submitted batch job 311913
+Submitted batch job 311914
+Submitted batch job 311915
+Submitted batch job 311916
+Submitted batch job 311917
+Submitted batch job 311918
+Submitted batch job 311919
+Submitted batch job 311920
+Submitted batch job 311921
+Submitted batch job 311922
+Submitted batch job 311924
+Submitted batch job 311925
+Submitted batch job 311923
+Submitted batch job 311926
+Submitted batch job 311927
+Submitted batch job 311928
+Submitted batch job 311929
+Submitted batch job 311930
+Submitted batch job 311931
+Submitted batch job 311932
+Submitted batch job 311933
+Submitted batch job 311934
+Submitted batch job 311935
+Submitted batch job 311936
+Submitted batch job 311937
+Submitted batch job 311938
+Submitted batch job 311939
+Submitted batch job 311940
+_gainFunc
+Submitting job: amara_g_revS
+_lossFunc
+Submitting job: amara_l_revS
+_duplFunc
+Submitting job: amara_dup_revS
+_demiDuplFunc
+Submitting job: amara_dem_revS
+_baseNumRFunc
+Submitting job: amara_bN_revS
+_gainFunc
+Submitting job: arali_g_revS
+_lossFunc
+Submitting job: arali_l_revS
+_duplFunc
+Submitting job: arali_dup_revS
+_demiDuplFunc
+Submitting job: arali_dem_revS
+_baseNumRFunc
+Submitting job: arali_bN_revS
+_gainFunc
+Submitting job: passi_g_revS
+_lossFunc
+Submitting job: passi_l_revS
+_duplFunc
+Submitting job: passi_dup_revS
+_demiDuplFunc
+Submitting job: passi_dem_revS
+_baseNumRFunc
+Submitting job: passi_bN_revS
+_gainFunc
+Submitting job: apocy_g_revS
+_lossFunc
+Submitting job: apocy_l_revS
+_duplFunc
+Submitting job: apocy_dup_revS
+_demiDuplFunc
+Submitting job: apocy_dem_revS
+_baseNumRFunc
+Submitting job: apocy_bN_revS
+_gainFunc
+Submitting job: hyper_g_revS
+_lossFunc
+Submitting job: hyper_l_revS
+_duplFunc
+Submitting job: hyper_dup_revS
+_demiDuplFunc
+Submitting job: hyper_dem_revS
+_baseNumRFunc
+Submitting job: hyper_bN_revS
+_gainFunc
+Submitting job: salic_g_revS
+_lossFunc
+Submitting job: salic_l_revS
+_duplFunc
+Submitting job: salic_dup_revS
+_demiDuplFunc
+Submitting job: salic_dem_revS
+_baseNumRFunc
+Submitting job: salic_bN_revS
+_gainFunc
+Submitting job: papav_g_revS
+_lossFunc
+Submitting job: papav_l_revS
+_duplFunc
+Submitting job: papav_dup_revS
+_demiDuplFunc
+Submitting job: papav_dem_revS
+_baseNumRFunc
+Submitting job: papav_bN_revS
+_gainFunc
+Submitting job: acant_g_revS
+_lossFunc
+Submitting job: acant_l_revS
+_duplFunc
+Submitting job: acant_dup_revS
+_demiDuplFunc
+Submitting job: acant_dem_revS
+_baseNumRFunc
+Submitting job: acant_bN_revS
+_gainFunc
+Submitting job: scrop_g_revS
+_lossFunc
+Submitting job: scrop_l_revS
+_duplFunc
+Submitting job: scrop_dup_revS
+_demiDuplFunc
+Submitting job: scrop_dem_revS
+_baseNumRFunc
+Submitting job: scrop_bN_revS
+_gainFunc
+Submitting job: capri_g_revS
+_lossFunc
+Submitting job: capri_l_revS
+_duplFunc
+Submitting job: capri_dup_revS
+_demiDuplFunc
+Submitting job: capri_dem_revS
+_baseNumRFunc
+Submitting job: capri_bN_revS
+_gainFunc
+Submitting job: plumb_g_revS
+_lossFunc
+Submitting job: plumb_l_revS
+_duplFunc
+Submitting job: plumb_dup_revS
+_demiDuplFunc
+Submitting job: plumb_dem_revS
+_baseNumRFunc
+Submitting job: plumb_bN_revS
+_gainFunc
+Submitting job: gesne_g_revS
+_lossFunc
+Submitting job: gesne_l_revS
+_duplFunc
+Submitting job: gesne_dup_revS
+_demiDuplFunc
+Submitting job: gesne_dem_revS
+_baseNumRFunc
+Submitting job: gesne_bN_revS
+_gainFunc
+Submitting job: viola_g_revS
+_lossFunc
+Submitting job: viola_l_revS
+_duplFunc
+Submitting job: viola_dup_revS
+_demiDuplFunc
+Submitting job: viola_dem_revS
+_baseNumRFunc
+Submitting job: viola_bN_revS
+_gainFunc
+Submitting job: urtic_g_revS
+_lossFunc
+Submitting job: urtic_l_revS
+_duplFunc
+Submitting job: urtic_dup_revS
+_demiDuplFunc
+Submitting job: urtic_dem_revS
+_baseNumRFunc
+Submitting job: urtic_bN_revS
+_gainFunc
+Submitting job: begon_g_revS
+_lossFunc
+Submitting job: begon_l_revS
+_duplFunc
+Submitting job: begon_dup_revS
+_demiDuplFunc
+Submitting job: begon_dem_revS
+_baseNumRFunc
+Submitting job: begon_bN_revS
+_gainFunc
+Submitting job: oxali_g_revS
+_lossFunc
+Submitting job: oxali_l_revS
+_duplFunc
+Submitting job: oxali_dup_revS
+_demiDuplFunc
+Submitting job: oxali_dem_revS
+_baseNumRFunc
+Submitting job: oxali_bN_revS
+_gainFunc
+Submitting job: arist_g_revS
+_lossFunc
+Submitting job: arist_l_revS
+_duplFunc
+Submitting job: arist_dup_revS
+_demiDuplFunc
+Submitting job: arist_dem_revS
+_baseNumRFunc
+Submitting job: arist_bN_revS
+_gainFunc
+Submitting job: comme_g_revS
+_lossFunc
+Submitting job: comme_l_revS
+_duplFunc
+Submitting job: comme_dup_revS
+_demiDuplFunc
+Submitting job: comme_dem_revS
+_baseNumRFunc
+Submitting job: comme_bN_revS
+_gainFunc
+Submitting job: junca_g_revS
+_lossFunc
+Submitting job: junca_l_revS
+_duplFunc
+Submitting job: junca_dup_revS
+_demiDuplFunc
+Submitting job: junca_dem_revS
+_baseNumRFunc
+Submitting job: junca_bN_revS
+_gainFunc
+Submitting job: eupho_g_revS
+_lossFunc
+Submitting job: eupho_l_revS
+_duplFunc
+Submitting job: eupho_dup_revS
+_demiDuplFunc
+Submitting job: eupho_dem_revS
+_baseNumRFunc
+Submitting job: eupho_bN_revS
+_gainFunc
+Submitting job: campa_g_revS
+_lossFunc
+Submitting job: campa_l_revS
+_duplFunc
+Submitting job: campa_dup_revS
+_demiDuplFunc
+Submitting job: campa_dem_revS
+_baseNumRFunc
+Submitting job: campa_bN_revS
+_gainFunc
+Submitting job: genti_g_revS
+_lossFunc
+Submitting job: genti_l_revS
+_duplFunc
+Submitting job: genti_dup_revS
+_demiDuplFunc
+Submitting job: genti_dem_revS
+_baseNumRFunc
+Submitting job: genti_bN_revS
+_gainFunc
+Submitting job: melas_g_revS
+_lossFunc
+Submitting job: melas_l_revS
+_duplFunc
+Submitting job: melas_dup_revS
+_demiDuplFunc
+Submitting job: melas_dem_revS
+_baseNumRFunc
+Submitting job: melas_bN_revS
+_gainFunc
+Submitting job: convo_g_revS
+_lossFunc
+Submitting job: convo_l_revS
+_duplFunc
+Submitting job: convo_dup_revS
+_demiDuplFunc
+Submitting job: convo_dem_revS
+_baseNumRFunc
+Submitting job: convo_bN_revS
+_gainFunc
+Submitting job: berbe_g_revS
+_lossFunc
+Submitting job: berbe_l_revS
+_duplFunc
+Submitting job: berbe_dup_revS
+_demiDuplFunc
+Submitting job: berbe_dem_revS
+_baseNumRFunc
+Submitting job: berbe_bN_revS
+_gainFunc
+Submitting job: zingi_g_revS
+_lossFunc
+Submitting job: zingi_l_revS
+_duplFunc
+Submitting job: zingi_dup_revS
+_demiDuplFunc
+Submitting job: zingi_dem_revS
+_baseNumRFunc
+Submitting job: zingi_bN_revS
+_gainFunc
+Submitting job: lilia_g_revS
+_lossFunc
+Submitting job: lilia_l_revS
+_duplFunc
+Submitting job: lilia_dup_revS
+_demiDuplFunc
+Submitting job: lilia_dem_revS
+_baseNumRFunc
+Submitting job: lilia_bN_revS
+_gainFunc
+Submitting job: borag_g_revS
+_lossFunc
+Submitting job: borag_l_revS
+_duplFunc
+Submitting job: borag_dup_revS
+_demiDuplFunc
+Submitting job: borag_dem_revS
+_baseNumRFunc
+Submitting job: borag_bN_revS
+_gainFunc
+Submitting job: aizoa_g_revS
+_lossFunc
+Submitting job: aizoa_l_revS
+_duplFunc
+Submitting job: aizoa_dup_revS
+_demiDuplFunc
+Submitting job: aizoa_dem_revS
+_baseNumRFunc
+Submitting job: aizoa_bN_revS
+_gainFunc
+Submitting job: aspho_g_revS
+_lossFunc
+Submitting job: aspho_l_revS
+_duplFunc
+Submitting job: aspho_dup_revS
+_demiDuplFunc
+Submitting job: aspho_dem_revS
+_baseNumRFunc
+Submitting job: aspho_bN_revS
+_gainFunc
+Submitting job: irida_g_revS
+_lossFunc
+Submitting job: irida_l_revS
+_duplFunc
+Submitting job: irida_dup_revS
+_demiDuplFunc
+Submitting job: irida_dem_revS
+_baseNumRFunc
+Submitting job: irida_bN_revS
+_gainFunc
+Submitting job: onagr_g_revS
+_lossFunc
+Submitting job: onagr_l_revS
+_duplFunc
+Submitting job: onagr_dup_revS
+_demiDuplFunc
+Submitting job: onagr_dem_revS
+_baseNumRFunc
+Submitting job: onagr_bN_revS
+_gainFunc
+Submitting job: geran_g_revS
+_lossFunc
+Submitting job: geran_l_revS
+_duplFunc
+Submitting job: geran_dup_revS
+_demiDuplFunc
+Submitting job: geran_dem_revS
+_baseNumRFunc
+Submitting job: geran_bN_revS
+_gainFunc
+Submitting job: cucur_g_revS
+_lossFunc
+Submitting job: cucur_l_revS
+_duplFunc
+Submitting job: cucur_dup_revS
+_demiDuplFunc
+Submitting job: cucur_dem_revS
+_baseNumRFunc
+Submitting job: cucur_bN_revS
+_gainFunc
+Submitting job: cacta_g_revS
+_lossFunc
+Submitting job: cacta_l_revS
+_duplFunc
+Submitting job: cacta_dup_revS
+_demiDuplFunc
+Submitting job: cacta_dem_revS
+_baseNumRFunc
+Submitting job: cacta_bN_revS
+_gainFunc
+Submitting job: crass_g_revS
+_lossFunc
+Submitting job: crass_l_revS
+_duplFunc
+Submitting job: crass_dup_revS
+_demiDuplFunc
+Submitting job: crass_dem_revS
+_baseNumRFunc
+Submitting job: crass_bN_revS
+_gainFunc
+Submitting job: polem_g_revS
+_lossFunc
+Submitting job: polem_l_revS
+_duplFunc
+Submitting job: polem_dup_revS
+_demiDuplFunc
+Submitting job: polem_dem_revS
+_baseNumRFunc
+Submitting job: polem_bN_revS
+_gainFunc
+Submitting job: myrta_g_revS
+_lossFunc
+Submitting job: myrta_l_revS
+_duplFunc
+Submitting job: myrta_dup_revS
+_demiDuplFunc
+Submitting job: myrta_dem_revS
+_baseNumRFunc
+Submitting job: myrta_bN_revS
+_gainFunc
+Submitting job: pinac_g_revS
+_lossFunc
+Submitting job: pinac_l_revS
+_duplFunc
+Submitting job: pinac_dup_revS
+_demiDuplFunc
+Submitting job: pinac_dem_revS
+_baseNumRFunc
+Submitting job: pinac_bN_revS
+_gainFunc
+Submitting job: malva_g_revS
+_lossFunc
+Submitting job: malva_l_revS
+_duplFuncSubmitted batch job 311941
+Submitted batch job 311942
+Submitted batch job 311943
+Submitted batch job 311944
+Submitted batch job 311945
+Submitted batch job 311946
+Submitted batch job 311947
+Submitted batch job 311948
+Submitted batch job 311950
+Submitted batch job 311949
+Submitted batch job 311951
+Submitted batch job 311952
+Submitted batch job 311953
+Submitted batch job 311954
+Submitted batch job 311955
+Submitted batch job 311956
+Submitted batch job 311957
+Submitted batch job 311958
+Submitted batch job 311959
+Submitted batch job 311960
+Submitted batch job 311961
+Submitted batch job 311962
+Submitted batch job 311963
+Submitted batch job 311964
+Submitted batch job 311965
+Submitted batch job 311966
+Submitted batch job 311967
+Submitted batch job 311968
+Submitted batch job 311969
+Submitted batch job 311970
+Submitted batch job 311971
+Submitted batch job 311972
+Submitted batch job 311973
+Submitted batch job 311974
+Submitted batch job 311975
+Submitted batch job 311976
+Submitted batch job 311977
+Submitted batch job 311978
+Submitted batch job 311979
+Submitted batch job 311980
+Submitted batch job 311981
+Submitted batch job 311982
+Submitted batch job 311983
+Submitted batch job 311984
+Submitted batch job 311985
+Submitted batch job 311986
+Submitted batch job 311987
+Submitted batch job 311988
+Submitted batch job 311989
+Submitted batch job 311990
+Submitted batch job 311991
+Submitted batch job 311992
+Submitted batch job 311993
+Submitted batch job 311994
+Submitted batch job 311995
+Submitted batch job 311996
+Submitted batch job 311997
+Submitted batch job 311998
+Submitted batch job 311999
+Submitted batch job 312000
+Submitted batch job 312001
+Submitted batch job 312002
+Submitted batch job 312003
+Submitted batch job 312004
+Submitted batch job 312005
+Submitted batch job 312006
+Submitted batch job 312007
+Submitted batch job 312008
+Submitted batch job 312009
+Submitted batch job 312010
+Submitted batch job 312011
+Submitted batch job 312012
+Submitted batch job 312013
+Submitted batch job 312014
+Submitted batch job 312015
+Submitted batch job 312016
+Submitted batch job 312017
+Submitted batch job 312018
+Submitted batch job 312020
+Submitted batch job 312019
+Submitted batch job 312021
+Submitted batch job 312024
+Submitted batch job 312025
+Submitted batch job 312022
+Submitted batch job 312023
+Submitted batch job 312026
+Submitted batch job 312027
+Submitted batch job 312028
+Submitted batch job 312029
+Submitted batch job 312030
+Submitted batch job 312031
+Submitted batch job 312032
+Submitted batch job 312033
+Submitted batch job 312034
+Submitted batch job 312035
+Submitted batch job 312036
+Submitted batch job 312037
+Submitted batch job 312038
+Submitted batch job 312039
+Submitted batch job 312040
+Submitted batch job 312041
+Submitted batch job 312042
+Submitted batch job 312043
+Submitted batch job 312044
+Submitted batch job 312045
+
+Submitting job: malva_dup_revS
+_demiDuplFunc
+Submitting job: malva_dem_revS
+_baseNumRFunc
+Submitting job: malva_bN_revS
+_gainFunc
+Submitting job: sapin_g_revS
+_lossFunc
+Submitting job: sapin_l_revS
+_duplFunc
+Submitting job: sapin_dup_revS
+_demiDuplFunc
+Submitting job: sapin_dem_revS
+_baseNumRFunc
+Submitting job: sapin_bN_revS
+_gainFunc
+Submitting job: saxif_g_revS
+_lossFunc
+Submitting job: saxif_l_revS
+_duplFunc
+Submitting job: saxif_dup_revS
+_demiDuplFunc
+Submitting job: saxif_dem_revS
+_baseNumRFunc
+Submitting job: saxif_bN_revS
+_gainFunc
+Submitting job: primu_g_revS
+_lossFunc
+Submitting job: primu_l_revS
+_duplFunc
+Submitting job: primu_dup_revS
+_demiDuplFunc
+Submitting job: primu_dem_revS
+_baseNumRFunc
+Submitting job: primu_bN_revS
+_gainFunc
+Submitting job: erica_g_revS
+_lossFunc
+Submitting job: erica_l_revS
+_duplFunc
+Submitting job: erica_dup_revS
+_demiDuplFunc
+Submitting job: erica_dem_revS
+_baseNumRFunc
+Submitting job: erica_bN_revS
+_gainFunc
+Submitting job: aspar_g_revS
+_lossFunc
+Submitting job: aspar_l_revS
+_duplFunc
+Submitting job: aspar_dup_revS
+_demiDuplFunc
+Submitting job: aspar_dem_revS
+_baseNumRFunc
+Submitting job: aspar_bN_revS
+_gainFunc
+Submitting job: melan_g_revS
+_lossFunc
+Submitting job: melan_l_revS
+_duplFunc
+Submitting job: melan_dup_revS
+_demiDuplFunc
+Submitting job: melan_dem_revS
+_baseNumRFunc
+Submitting job: melan_bN_revS
+_gainFunc
+Submitting job: rubia_g_revS
+_lossFunc
+Submitting job: rubia_l_revS
+_duplFunc
+Submitting job: rubia_dup_revS
+_demiDuplFunc
+Submitting job: rubia_dem_revS
+_baseNumRFunc
+Submitting job: rubia_bN_revS
+_gainFunc
+Submitting job: oleac_g_revS
+_lossFunc
+Submitting job: oleac_l_revS
+_duplFunc
+Submitting job: oleac_dup_revS
+_demiDuplFunc
+Submitting job: oleac_dem_revS
+_baseNumRFunc
+Submitting job: oleac_bN_revS
+_gainFunc
+Submitting job: arace_g_revS
+_lossFunc
+Submitting job: arace_l_revS
+_duplFunc
+Submitting job: arace_dup_revS
+_demiDuplFunc
+Submitting job: arace_dem_revS
+_baseNumRFunc
+Submitting job: arace_bN_revS
+_gainFunc
+Submitting job: polyg_g_revS
+_lossFunc
+Submitting job: polyg_l_revS
+_duplFunc
+Submitting job: polyg_dup_revS
+_demiDuplFunc
+Submitting job: polyg_dem_revS
+_baseNumRFunc
+Submitting job: polyg_bN_revS
+_gainFunc
+Submitting job: prote_g_revS
+_lossFunc
+Submitting job: prote_l_revS
+_duplFunc
+Submitting job: prote_dup_revS
+_demiDuplFunc
+Submitting job: prote_dem_revS
+_baseNumRFunc
+Submitting job: prote_bN_revS
+_gainFunc
+Submitting job: ranun_g_revS
+_lossFunc
+Submitting job: ranun_l_revS
+_duplFunc
+Submitting job: ranun_dup_revS
+_demiDuplFunc
+Submitting job: ranun_dem_revS
+_baseNumRFunc
+Submitting job: ranun_bN_revS
+_gainFunc
+Submitting job: solan_g_revS
+_lossFunc
+Submitting job: solan_l_revS
+_duplFunc
+Submitting job: solan_dup_revS
+_demiDuplFunc
+Submitting job: solan_dem_revS
+_baseNumRFunc
+Submitting job: solan_bN_revS
+_gainFunc
+Submitting job: rosac_g_revS
+_lossFunc
+Submitting job: rosac_l_revS
+_duplFunc
+Submitting job: rosac_dup_revS
+_demiDuplFunc
+Submitting job: rosac_dem_revS
+_baseNumRFunc
+Submitting job: rosac_bN_revS
+_gainFunc
+Submitting job: colch_g_revS
+_lossFunc
+Submitting job: colch_l_revS
+_duplFunc
+Submitting job: colch_dup_revS
+_demiDuplFunc
+Submitting job: colch_dem_revS
+_baseNumRFunc
+Submitting job: colch_bN_revS
+_gainFunc
+Submitting job: balsa_g_revS
+_lossFunc
+Submitting job: balsa_l_revS
+_duplFunc
+Submitting job: balsa_dup_revS
+_demiDuplFunc
+Submitting job: balsa_dem_revS
+_baseNumRFunc
+Submitting job: balsa_bN_revS
+_gainFunc
+Submitting job: morac_g_revS
+_lossFunc
+Submitting job: morac_l_revS
+_duplFunc
+Submitting job: morac_dup_revS
+_demiDuplFunc
+Submitting job: morac_dem_revS
+_baseNumRFunc
+Submitting job: morac_bN_revS
+_gainFunc
+Submitting job: rutac_g_revS
+_lossFunc
+Submitting job: rutac_l_revS
+_duplFunc
+Submitting job: rutac_dup_revS
+_demiDuplFunc
+Submitting job: rutac_dem_revS
+_baseNumRFunc
+Submitting job: rutac_bN_revS
+_gainFunc
+Submitting job: lythr_g_revS
+_lossFunc
+Submitting job: lythr_l_revS
+_duplFunc
+Submitting job: lythr_dup_revS
+_demiDuplFunc
+Submitting job: lythr_dem_revS
+_baseNumRFunc
+Submitting job: lythr_bN_revS
+_gainFunc
+Submitting job: apiac_g_revS
+_lossFunc
+Submitting job: apiac_l_revS
+_duplFunc
+Submitting job: apiac_dup_revS
+_demiDuplFunc
+Submitting job: apiac_dem_revS
+_baseNumRFunc
+Submitting job: apiac_bN_revS

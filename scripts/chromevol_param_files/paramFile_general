@@ -1,0 +1,35 @@
+# files directories, change according to the specific family and the output directories
+_dataFile = /groups/itay_mayrose/noybandel/ChromEvol_project/<my_dir>/counts.fasta
+_treeFile = /groups/itay_mayrose/noybandel/ChromEvol_project/<my_dir>/tree.newick
+_resultsPathDir = /groups/itay_mayrose/noybandel/ChromEvol_project/<my_dir>/Results # create a file with this name in <my_dir> as this directory should already exist
+
+# define the function (type) of each transition (CONST\LINEAR\EXP\LOGNORMALREVERSE_SIGMOID), must be determined, change according to the current test:
+_gainFunc = CONST
+_lossFunc = CONST
+_duplFunc = CONST
+_demiDuplFunc = CONST
+_baseNumRFunc = CONST
+
+# provide initial values for each transition rate (with parameters according to the function above), change according to the current test:
+_gain_1 = 1;<parameter1 value>,<parameter2 value>,...
+_loss_1 = 2;<parameter1 value>,<parameter2 value>,...
+_dupl_1 = 3
+_demiPloidyR_1 = 4
+_baseNum_1 = 5
+_baseNumR_1 = 6
+
+### do not change ###
+# do not change - constants across different runs:
+_optimizationMethod = Brent
+_baseNumOptimizationMethod = Ranges
+_minChrNum = -1
+# optimization parameters:
+_optimizePointsNum = 10,3,1
+_optimizeIterNum = 0,2,5
+_maxParsimonyBound = true
+_tolParamOptimization = 0.1
+_seed = 1 # set a seed (integer value), so it will be possible to reproduce the results
+
+# do not change - relevant for heterogeneous models:
+_heterogeneousModel = false
+_backwardPhase = false

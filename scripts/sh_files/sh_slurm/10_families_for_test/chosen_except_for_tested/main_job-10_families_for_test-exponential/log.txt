@@ -1,0 +1,110 @@
+Submitted batch job 779289
+Submitted batch job 779290
+Submitted batch job 779292
+Submitted batch job 779293
+Submitted batch job 779294
+Submitted batch job 779295
+Submitted batch job 779296
+Submitted batch job 779297
+Submitted batch job 779298
+Submitted batch job 779300
+Submitted batch job 779301
+Submitted batch job 779302
+Submitted batch job 779303
+Submitted batch job 779304
+Submitted batch job 779305
+Submitted batch job 779307
+Submitted batch job 779308
+Submitted batch job 779309
+Submitted batch job 779310
+Submitted batch job 779311
+Submitted batch job 779313
+Submitted batch job 779314
+Submitted batch job 779315
+Submitted batch job 779316
+Submitted batch job 779318
+Submitted batch job 779319
+Submitted batch job 779320
+Submitted batch job 779321
+Submitted batch job 779322
+Submitted batch job 779324
+Submitted batch job 779325
+Submitted batch job 779326
+Submitted batch job 779328
+Submitted batch job 779329
+Submitted batch job 779330
+Submitted batch job 779331
+Submitted batch job 779332
+Submitted batch job 779333
+Submitted batch job 779334
+Submitted batch job 779336
+Submitted batch job 779337
+Submitted batch job 779338
+Submitted batch job 779339
+Submitted batch job 779341
+Submitted batch job 779340
+Submitted batch job 779342
+Submitted batch job 779343
+Submitted batch job 779344
+Submitted batch job 779345
+Submitted batch job 779346
+family_chosen_models_dict: {'_baseNumRFunc': 'CONST', '_demiDuplFunc': 'EXP', '_duplFunc': 'EXP', '_gainFunc': 'EXP', '_lossFunc': 'EXP'}
+Submitting job: acanthaceae_g_exp
+Submitting job: acanthaceae_l_exp
+Submitting job: acanthaceae_dup_exp
+Submitting job: acanthaceae_dem_exp
+Submitting job: acanthaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'EXP', '_demiDuplFunc': 'LINEAR_BD', '_duplFunc': 'EXP', '_gainFunc': 'IGNORE', '_lossFunc': 'EXP'}
+Submitting job: aizoaceae_g_exp
+Submitting job: aizoaceae_l_exp
+Submitting job: aizoaceae_dup_exp
+Submitting job: aizoaceae_dem_exp
+Submitting job: aizoaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'LOGNORMAL', '_demiDuplFunc': 'LINEAR_BD', '_duplFunc': 'REVERSE_SIGMOID', '_gainFunc': 'LINEAR', '_lossFunc': 'LINEAR_BD'}
+Submitting job: amaranthaceae_g_exp
+Submitting job: amaranthaceae_l_exp
+Submitting job: amaranthaceae_dup_exp
+Submitting job: amaranthaceae_dem_exp
+Submitting job: amaranthaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'LINEAR_BD', '_demiDuplFunc': 'LINEAR', '_duplFunc': 'EXP', '_gainFunc': 'EXP', '_lossFunc': 'EXP'}
+Submitting job: apiaceae_g_exp
+Submitting job: apiaceae_l_exp
+Submitting job: apiaceae_dup_exp
+Submitting job: apiaceae_dem_exp
+Submitting job: apiaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'CONST', '_demiDuplFunc': 'EXP', '_duplFunc': 'LINEAR_BD', '_gainFunc': 'LINEAR_BD', '_lossFunc': 'EXP'}
+Submitting job: apocynaceae_g_exp
+Submitting job: apocynaceae_l_exp
+Submitting job: apocynaceae_dup_exp
+Submitting job: apocynaceae_dem_exp
+Submitting job: apocynaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'LINEAR_BD', '_demiDuplFunc': 'EXP', '_duplFunc': 'REVERSE_SIGMOID', '_gainFunc': 'LINEAR', '_lossFunc': 'LINEAR_BD'}
+Submitting job: araceae_g_exp
+Submitting job: araceae_l_exp
+Submitting job: araceae_dup_exp
+Submitting job: araceae_dem_exp
+Submitting job: araceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'LOGNORMAL', '_demiDuplFunc': 'LINEAR_BD', '_duplFunc': 'REVERSE_SIGMOID', '_gainFunc': 'IGNORE', '_lossFunc': 'CONST'}
+Submitting job: araliaceae_g_exp
+Submitting job: araliaceae_l_exp
+Submitting job: araliaceae_dup_exp
+Submitting job: araliaceae_dem_exp
+Submitting job: araliaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'EXP', '_demiDuplFunc': 'IGNORE', '_duplFunc': 'CONST', '_gainFunc': 'LINEAR_BD', '_lossFunc': 'LINEAR_BD'}
+Submitting job: aristolochiaceae_g_exp
+Submitting job: aristolochiaceae_l_exp
+Submitting job: aristolochiaceae_dup_exp
+Submitting job: aristolochiaceae_dem_exp
+Submitting job: aristolochiaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'LINEAR_BD', '_demiDuplFunc': 'LOGNORMAL', '_duplFunc': 'LOGNORMAL', '_gainFunc': 'LOGNORMAL', '_lossFunc': 'CONST'}
+Submitting job: asparagaceae_g_exp
+Submitting job: asparagaceae_l_exp
+Submitting job: asparagaceae_dup_exp
+Submitting job: asparagaceae_dem_exp
+Submitting job: asparagaceae_bN_exp
+family_chosen_models_dict: {'_baseNumRFunc': 'LINEAR_BD', '_demiDuplFunc': 'LINEAR_BD', '_duplFunc': 'CONST', '_gainFunc': 'LINEAR', '_lossFunc': 'LINEAR_BD'}
+Submitting job: asphodelaceae_g_exp
+Submitting job: asphodelaceae_l_exp
+Submitting job: asphodelaceae_dup_exp
+Submitting job: asphodelaceae_dem_exp
+Submitting job: asphodelaceae_bN_exp

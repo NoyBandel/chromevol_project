@@ -1,0 +1,11 @@
+Submitted batch job 778739
+Submitted batch job 778741
+Submitted batch job 778740
+Submitted batch job 778743
+Submitted batch job 778742
+family_chosen_models_dict: {'_baseNumRFunc': 'LINEAR_BD', '_demiDuplFunc': 'IGNORE', '_duplFunc': 'LINEAR_BD', '_gainFunc': 'CONST', '_lossFunc': 'CONST'}
+Submitting job: berberidaceae_g_con
+Submitting job: berberidaceae_l_con
+Submitting job: berberidaceae_dup_con
+Submitting job: berberidaceae_dem_con
+Submitting job: berberidaceae_bN_con

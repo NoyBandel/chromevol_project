@@ -1,0 +1,47 @@
+# - create <raw_results_folder>, manually
+# - in raw_results folder: create raw results folder for each family, containing each transition type, containing each function type
+
+"/groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_results_directories.py"
+
+
+
+
+
+
+
+
+# - create a main sh_slurm jobs folder, named "chosen_except_for_tested" or "const_except_for_tested"
+# - create sh_slurm jobs folders and files
+for chosen_except_for_tested:
+python /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_sh_files_and_folders.py \
+  --main_jobs_folder /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/sh_files/sh_slurm/all_large_families/chosen_except_for_tested/ \
+  --chosen_or_const chosen \
+  --func_types linear linear-bd exponential reverse-sigmoid log-normal ignore const \
+  --create_pfiles_and_run_jobs_python_script /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_pfiles_and_run_jobs_for_chosen.py \
+  --input_data_folder_path /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_input_data/all_families_over_100/ \
+  --raw_results_folder_path /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/chosen_except_for_tested/ \
+  --data_type_job_name all_families_over_100 \
+  --all_chosen_models_file_path /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/const_except_for_tested/all_chosen_models.csv
+
+for const_except_for_tested:
+python /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_sh_files_and_folders.py \
+  --main_jobs_folder /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/sh_files/sh_slurm/all_large_families/chosen_except_for_tested/ \
+  --chosen_or_const const \
+  --func_types linear linear-bd exponential reverse-sigmoid log-normal ignore \
+  --create_pfiles_and_run_jobs_python_script /groups/itay_mayrose/noybandel/ChromEvol_project/scripts/create_pfiles_and_run_jobs.py \
+  --input_data_folder_path /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_input_data/all_families_over_100/ \
+  --raw_results_folder_path /groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/const_except_for_tested/ \
+  --data_type_job_name all_families_over_100 \
+  
+  
+  
+  
+# - run
+
+
+
+
+
+# - look for error
+  
+  

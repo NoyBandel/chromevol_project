@@ -1,0 +1,900 @@
+Submitted batch job 228622
+Submitted batch job 228623
+Submitted batch job 228624
+Submitted batch job 228625
+Submitted batch job 228626
+Submitted batch job 228627
+Submitted batch job 228631
+Submitted batch job 228629
+Submitted batch job 228628
+Submitted batch job 228630
+Submitted batch job 228632
+Submitted batch job 228633
+Submitted batch job 228634
+Submitted batch job 228635
+Submitted batch job 228636
+Submitted batch job 228637
+Submitted batch job 228638
+Submitted batch job 228639
+Submitted batch job 228640
+Submitted batch job 228641
+Submitted batch job 228642
+Submitted batch job 228643
+Submitted batch job 228644
+Submitted batch job 228645
+Submitted batch job 228646
+Submitted batch job 228647
+Submitted batch job 228648
+Submitted batch job 228649
+Submitted batch job 228650
+Submitted batch job 228652
+Submitted batch job 228653
+Submitted batch job 228654
+Submitted batch job 228655
+Submitted batch job 228656
+Submitted batch job 228657
+Submitted batch job 228658
+Submitted batch job 228659
+Submitted batch job 228660
+Submitted batch job 228661
+Submitted batch job 228662
+Submitted batch job 228663
+Submitted batch job 228664
+Submitted batch job 228665
+Submitted batch job 228666
+Submitted batch job 228667
+Submitted batch job 228668
+Submitted batch job 228669
+Submitted batch job 228670
+Submitted batch job 228671
+Submitted batch job 228672
+Submitted batch job 228673
+Submitted batch job 228674
+Submitted batch job 228676
+Submitted batch job 228677
+Submitted batch job 228678
+Submitted batch job 228680
+Submitted batch job 228681
+Submitted batch job 228682
+Submitted batch job 228683
+Submitted batch job 228684
+Submitted batch job 228685
+Submitted batch job 228686
+Submitted batch job 228687
+Submitted batch job 228688
+Submitted batch job 228689
+Submitted batch job 228690
+Submitted batch job 228691
+Submitted batch job 228692
+Submitted batch job 228693
+Submitted batch job 228694
+Submitted batch job 228695
+Submitted batch job 228696
+Submitted batch job 228697
+Submitted batch job 228698
+Submitted batch job 228699
+Submitted batch job 228700
+Submitted batch job 228701
+Submitted batch job 228702
+Submitted batch job 228703
+Submitted batch job 228704
+Submitted batch job 228705
+Submitted batch job 228706
+Submitted batch job 228707
+Submitted batch job 228708
+Submitted batch job 228709
+Submitted batch job 228710
+Submitted batch job 228711
+Submitted batch job 228712
+Submitted batch job 228713
+Submitted batch job 228714
+Submitted batch job 228715
+Submitted batch job 228716
+Submitted batch job 228717
+Submitted batch job 228718
+Submitted batch job 228719
+Submitted batch job 228720
+Submitted batch job 228721
+Submitted batch job 228722
+Submitted batch job 228723
+Submitted batch job 228724
+Submitted batch job 228725
+Submitted batch job 228726
+Submitted batch job 228727
+Submitted batch job 228728
+Submitted batch job 228729
+Submitted batch job 228731
+Submitted batch job 228732
+Submitted batch job 228733
+Submitted batch job 228734
+Submitted batch job 228735
+Submitted batch job 228736
+Submitted batch job 228737
+Submitted batch job 228738
+Submitted batch job 228739
+Submitted batch job 228740
+Submitted batch job 228741
+Submitted batch job 228742
+Submitted batch job 228743
+Submitted batch job 228744
+Submitted batch job 228745
+Submitted batch job 228746
+Submitted batch job 228747
+Submitted batch job 228748
+Submitted batch job 228749
+Submitted batch job 228750
+Submitted batch job 228751
+Submitted batch job 228752
+Submitted batch job 228753
+Submitted batch job 228754
+Submitted batch job 228755
+Submitted batch job 228756
+Submitted batch job 228757
+Submitted batch job 228758
+Submitted batch job 228759
+Submitted batch job 228760
+Submitted batch job 228761
+Submitted batch job 228762
+Submitted batch job 228763
+Submitted batch job 228764
+Submitted batch job 228765
+Submitted batch job 228766
+Submitted batch job 228767
+Submitted batch job 228768
+Submitted batch job 228769
+Submitted batch job 228770
+Submitted batch job 228771
+Submitted batch job 228772
+Submitted batch job 228773
+Submitted batch job 228774
+Submitted batch job 228775
+Submitted batch job 228776
+Submitted batch job 228777
+Submitted batch job 228778
+Submitted batch job 228779
+Submitted batch job 228781
+Submitted batch job 228783
+Submitted batch job 228784
+Submitted batch job 228785
+Submitted batch job 228786
+Submitted batch job 228787
+Submitted batch job 228788
+Submitted batch job 228789
+Submitted batch job 228790
+Submitted batch job 228791
+Submitted batch job 228792
+Submitted batch job 228793
+Submitted batch job 228794
+Submitted batch job 228795
+Submitted batch job 228796
+Submitted batch job 228797
+Submitted batch job 228798
+Submitted batch job 228799
+Submitted batch job 228800
+Submitted batch job 228801
+Submitted batch job 228802
+Submitted batch job 228803
+Submitted batch job 228804
+Submitted batch job 228806
+Submitted batch job 228805
+Submitted batch job 228807
+Submitted batch job 228808
+Submitted batch job 228809
+Submitted batch job 228811
+Submitted batch job 228810
+Submitted batch job 228812
+Submitted batch job 228813
+Submitted batch job 228814
+Submitted batch job 228815
+Submitted batch job 228816
+Submitted batch job 228817
+Submitted batch job 228818
+Submitted batch job 228819
+Submitted batch job 228820
+Submitted batch job 228821
+Submitted batch job 228822
+Submitted batch job 228823
+Submitted batch job 228824
+Submitted batch job 228825
+Submitted batch job 228826
+Submitted batch job 228827
+_gainFunc
+Submitting job: amara_g_ign
+_lossFunc
+Submitting job: amara_l_ign
+_duplFunc
+Submitting job: amara_dup_ign
+_demiDuplFunc
+Submitting job: amara_dem_ign
+_baseNumRFunc
+Submitting job: amara_bN_ign
+_gainFunc
+Submitting job: arali_g_ign
+_lossFunc
+Submitting job: arali_l_ign
+_duplFunc
+Submitting job: arali_dup_ign
+_demiDuplFunc
+Submitting job: arali_dem_ign
+_baseNumRFunc
+Submitting job: arali_bN_ign
+_gainFunc
+Submitting job: passi_g_ign
+_lossFunc
+Submitting job: passi_l_ign
+_duplFunc
+Submitting job: passi_dup_ign
+_demiDuplFunc
+Submitting job: passi_dem_ign
+_baseNumRFunc
+Submitting job: passi_bN_ign
+_gainFunc
+Submitting job: apocy_g_ign
+_lossFunc
+Submitting job: apocy_l_ign
+_duplFunc
+Submitting job: apocy_dup_ign
+_demiDuplFunc
+Submitting job: apocy_dem_ign
+_baseNumRFunc
+Submitting job: apocy_bN_ign
+_gainFunc
+Submitting job: hyper_g_ign
+_lossFunc
+Submitting job: hyper_l_ign
+_duplFunc
+Submitting job: hyper_dup_ign
+_demiDuplFunc
+Submitting job: hyper_dem_ign
+_baseNumRFunc
+Submitting job: hyper_bN_ign
+_gainFunc
+Submitting job: salic_g_ign
+_lossFunc
+Submitting job: salic_l_ign
+_duplFunc
+Submitting job: salic_dup_ign
+_demiDuplFunc
+Submitting job: salic_dem_ign
+_baseNumRFunc
+Submitting job: salic_bN_ign
+_gainFunc
+Submitting job: papav_g_ign
+_lossFunc
+Submitting job: papav_l_ign
+_duplFunc
+Submitting job: papav_dup_ign
+_demiDuplFunc
+Submitting job: papav_dem_ign
+_baseNumRFunc
+Submitting job: papav_bN_ign
+_gainFunc
+Submitting job: acant_g_ign
+_lossFunc
+Submitting job: acant_l_ign
+_duplFunc
+Submitting job: acant_dup_ign
+_demiDuplFunc
+Submitting job: acant_dem_ign
+_baseNumRFunc
+Submitting job: acant_bN_ign
+_gainFunc
+Submitting job: scrop_g_ign
+_lossFunc
+Submitting job: scrop_l_ign
+_duplFunc
+Submitting job: scrop_dup_ign
+_demiDuplFunc
+Submitting job: scrop_dem_ign
+_baseNumRFunc
+Submitting job: scrop_bN_ign
+_gainFunc
+Submitting job: capri_g_ign
+_lossFunc
+Submitting job: capri_l_ign
+_duplFunc
+Submitting job: capri_dup_ign
+_demiDuplFunc
+Submitting job: capri_dem_ign
+_baseNumRFunc
+Submitting job: capri_bN_ign
+_gainFunc
+Submitting job: plumb_g_ign
+_lossFunc
+Submitting job: plumb_l_ign
+_duplFunc
+Submitting job: plumb_dup_ign
+_demiDuplFunc
+Submitting job: plumb_dem_ign
+_baseNumRFunc
+Submitting job: plumb_bN_ign
+_gainFunc
+Submitting job: gesne_g_ign
+_lossFunc
+Submitting job: gesne_l_ign
+_duplFunc
+Submitting job: gesne_dup_ign
+_demiDuplFunc
+Submitting job: gesne_dem_ign
+_baseNumRFunc
+Submitting job: gesne_bN_ign
+_gainFunc
+Submitting job: viola_g_ign
+_lossFunc
+Submitting job: viola_l_ign
+_duplFunc
+Submitting job: viola_dup_ign
+_demiDuplFunc
+Submitting job: viola_dem_ign
+_baseNumRFunc
+Submitting job: viola_bN_ign
+_gainFunc
+Submitting job: urtic_g_ign
+_lossFunc
+Submitting job: urtic_l_ign
+_duplFunc
+Submitting job: urtic_dup_ign
+_demiDuplFunc
+Submitting job: urtic_dem_ign
+_baseNumRFunc
+Submitting job: urtic_bN_ign
+_gainFunc
+Submitting job: begon_g_ign
+_lossFunc
+Submitting job: begon_l_ign
+_duplFunc
+Submitting job: begon_dup_ign
+_demiDuplFunc
+Submitting job: begon_dem_ign
+_baseNumRFunc
+Submitting job: begon_bN_ign
+_gainFunc
+Submitting job: oxali_g_ign
+_lossFunc
+Submitting job: oxali_l_ign
+_duplFunc
+Submitting job: oxali_dup_ign
+_demiDuplFunc
+Submitting job: oxali_dem_ign
+_baseNumRFunc
+Submitting job: oxali_bN_ign
+_gainFunc
+Submitting job: arist_g_ign
+_lossFunc
+Submitting job: arist_l_ign
+_duplFunc
+Submitting job: arist_dup_ign
+_demiDuplFunc
+Submitting job: arist_dem_ign
+_baseNumRFunc
+Submitting job: arist_bN_ign
+_gainFunc
+Submitting job: comme_g_ign
+_lossFunc
+Submitting job: comme_l_ign
+_duplFunc
+Submitting job: comme_dup_ign
+_demiDuplFunc
+Submitting job: comme_dem_ign
+_baseNumRFunc
+Submitting job: comme_bN_ign
+_gainFunc
+Submitting job: junca_g_ign
+_lossFunc
+Submitting job: junca_l_ign
+_duplFunc
+Submitting job: junca_dup_ign
+_demiDuplFunc
+Submitting job: junca_dem_ign
+_baseNumRFunc
+Submitting job: junca_bN_ign
+_gainFunc
+Submitting job: eupho_g_ign
+_lossFunc
+Submitting job: eupho_l_ign
+_duplFunc
+Submitting job: eupho_dup_ign
+_demiDuplFunc
+Submitting job: eupho_dem_ign
+_baseNumRFunc
+Submitting job: eupho_bN_ign
+_gainFunc
+Submitting job: campa_g_ign
+_lossFunc
+Submitting job: campa_l_ign
+_duplFunc
+Submitting job: campa_dup_ign
+_demiDuplFunc
+Submitting job: campa_dem_ign
+_baseNumRFunc
+Submitting job: campa_bN_ign
+_gainFunc
+Submitting job: genti_g_ign
+_lossFunc
+Submitting job: genti_l_ign
+_duplFunc
+Submitting job: genti_dup_ign
+_demiDuplFunc
+Submitting job: genti_dem_ign
+_baseNumRFunc
+Submitting job: genti_bN_ign
+_gainFunc
+Submitting job: melas_g_ign
+_lossFunc
+Submitting job: melas_l_ign
+_duplFunc
+Submitting job: melas_dup_ign
+_demiDuplFunc
+Submitting job: melas_dem_ign
+_baseNumRFunc
+Submitting job: melas_bN_ign
+_gainFunc
+Submitting job: convo_g_ign
+_lossFunc
+Submitting job: convo_l_ign
+_duplFunc
+Submitting job: convo_dup_ign
+_demiDuplFunc
+Submitting job: convo_dem_ign
+_baseNumRFunc
+Submitting job: convo_bN_ign
+_gainFunc
+Submitting job: berbe_g_ign
+_lossFunc
+Submitting job: berbe_l_ign
+_duplFunc
+Submitting job: berbe_dup_ign
+_demiDuplFunc
+Submitting job: berbe_dem_ign
+_baseNumRFunc
+Submitting job: berbe_bN_ign
+_gainFunc
+Submitting job: zingi_g_ign
+_lossFunc
+Submitting job: zingi_l_ign
+_duplFunc
+Submitting job: zingi_dup_ign
+_demiDuplFunc
+Submitting job: zingi_dem_ign
+_baseNumRFunc
+Submitting job: zingi_bN_ign
+_gainFunc
+Submitting job: lilia_g_ign
+_lossFunc
+Submitting job: lilia_l_ign
+_duplFunc
+Submitting job: lilia_dup_ign
+_demiDuplFunc
+Submitting job: lilia_dem_ign
+_baseNumRFunc
+Submitting job: lilia_bN_ign
+_gainFunc
+Submitting job: borag_g_ign
+_lossFunc
+Submitting job: borag_l_ign
+_duplFunc
+Submitting job: borag_dup_ign
+_demiDuplFunc
+Submitting job: borag_dem_ign
+_baseNumRFunc
+Submitting job: borag_bN_ign
+_gainFunc
+Submitting job: aizoa_g_ign
+_lossFunc
+Submitting job: aizoa_l_ign
+_duplFunc
+Submitting job: aizoa_dup_ign
+_demiDuplFunc
+Submitting job: aizoa_dem_ign
+_baseNumRFunc
+Submitting job: aizoa_bN_ign
+_gainFunc
+Submitting job: aspho_g_ign
+_lossFunc
+Submitting job: aspho_l_ign
+_duplFunc
+Submitting job: aspho_dup_ign
+_demiDuplFunc
+Submitting job: aspho_dem_ign
+_baseNumRFunc
+Submitting job: aspho_bN_ign
+_gainFunc
+Submitting job: irida_g_ign
+_lossFunc
+Submitting job: irida_l_ign
+_duplFunc
+Submitting job: irida_dup_ign
+_demiDuplFunc
+Submitting job: irida_dem_ign
+_baseNumRFunc
+Submitting job: irida_bN_ign
+_gainFunc
+Submitting job: onagr_g_ign
+_lossFunc
+Submitting job: onagr_l_ign
+_duplFunc
+Submitting job: onagr_dup_ign
+_demiDuplFunc
+Submitting job: onagr_dem_ign
+_baseNumRFunc
+Submitting job: onagr_bN_ign
+_gainFunc
+Submitting job: geran_g_ign
+_lossFunc
+Submitting job: geran_l_ign
+_duplFunc
+Submitting job: geran_dup_ign
+_demiDuplFunc
+Submitting job: geran_dem_ign
+_baseNumRFunc
+Submitting job: geran_bN_ign
+_gainFunc
+Submitting job: cucur_g_ign
+_lossFunc
+Submitting job: cucur_l_ign
+_duplFunc
+Submitting job: cucur_dup_ign
+_demiDuplFunc
+Submitting job: cucur_dem_ign
+_baseNumRFunc
+Submitting job: cucur_bN_ign
+_gainFunc
+Submitting job: cacta_g_ign
+_lossFunc
+Submitting job: cacta_l_ign
+_duplFunc
+Submitting job: cacta_dup_ign
+_demiDuplFunc
+Submitting job: cacta_dem_ign
+_baseNumRFunc
+Submitting job: cacta_bN_ign
+_gainFunc
+Submitting job: crass_g_ign
+_lossFunc
+Submitting job: crass_l_ign
+_duplFunc
+Submitting job: crass_dup_ign
+_demiDuplFunc
+Submitting job: crass_dem_ign
+_baseNumRFunc
+Submitting job: crass_bN_ign
+_gainFunc
+Submitting job: polem_g_ign
+_lossFunc
+Submitting job: polem_l_ign
+_duplFunc
+Submitting job: polem_dup_ign
+_demiDuplFunc
+Submitting job: polem_dem_ign
+_baseNumRFunc
+Submitting job: polem_bN_ign
+_gainFunc
+Submitting job: myrta_g_ign
+_lossFunc
+Submitting job: myrta_l_ign
+_duplFunc
+Submitting job: myrta_dup_ign
+_demiDuplFunc
+Submitting job: myrta_dem_ign
+_baseNumRFunc
+Submitting job: myrta_bN_ign
+_gainFunc
+Submitting job: pinac_g_ign
+_lossFunc
+Submitting job: pinac_l_ign
+_duplFunc
+Submitting job: pinac_dup_ign
+_demiDuplFunc
+Submitting job: pinac_dem_ign
+_baseNumRFunc
+Submitting job: pinac_bN_ign
+_gainFunc
+Submitting job: malva_g_ign
+_lossFunc
+Submitting job: malva_l_ign
+_duplFunc
+Submitting job: malva_dup_ign
+_demiDuplFunc
+Submitting job: malva_dem_ign
+_baseNumRFunc
+Submitting job: malva_bN_ign
+_gainFunc
+Submitting job: sapin_g_ign
+_lossFunc
+Submitting job: sapin_l_ignSubmitted batch job 228828
+Submitted batch job 228830
+Submitted batch job 228832
+Submitted batch job 228831
+Submitted batch job 228833
+Submitted batch job 228837
+Submitted batch job 228838
+Submitted batch job 228840
+Submitted batch job 228841
+Submitted batch job 228839
+Submitted batch job 228842
+Submitted batch job 228843
+Submitted batch job 228844
+Submitted batch job 228845
+Submitted batch job 228846
+Submitted batch job 228847
+Submitted batch job 228848
+Submitted batch job 228849
+Submitted batch job 228850
+Submitted batch job 228851
+Submitted batch job 228852
+Submitted batch job 228853
+Submitted batch job 228854
+Submitted batch job 228855
+Submitted batch job 228856
+Submitted batch job 228857
+Submitted batch job 228858
+Submitted batch job 228859
+Submitted batch job 228860
+Submitted batch job 228861
+Submitted batch job 228862
+Submitted batch job 228863
+Submitted batch job 228864
+Submitted batch job 228865
+Submitted batch job 228866
+Submitted batch job 228867
+Submitted batch job 228868
+Submitted batch job 228869
+Submitted batch job 228870
+Submitted batch job 228871
+Submitted batch job 228872
+Submitted batch job 228873
+Submitted batch job 228874
+Submitted batch job 228875
+Submitted batch job 228876
+Submitted batch job 228877
+Submitted batch job 228878
+Submitted batch job 228879
+Submitted batch job 228880
+Submitted batch job 228881
+Submitted batch job 228882
+Submitted batch job 228883
+Submitted batch job 228885
+Submitted batch job 228887
+Submitted batch job 228886
+Submitted batch job 228888
+Submitted batch job 228889
+Submitted batch job 228890
+Submitted batch job 228891
+Submitted batch job 228892
+Submitted batch job 228893
+Submitted batch job 228894
+Submitted batch job 228895
+Submitted batch job 228896
+Submitted batch job 228897
+Submitted batch job 228898
+Submitted batch job 228899
+Submitted batch job 228900
+Submitted batch job 228901
+Submitted batch job 228902
+Submitted batch job 228903
+Submitted batch job 228904
+Submitted batch job 228905
+Submitted batch job 228906
+Submitted batch job 228907
+Submitted batch job 228908
+Submitted batch job 228909
+Submitted batch job 228911
+Submitted batch job 228912
+Submitted batch job 228910
+Submitted batch job 228913
+Submitted batch job 228914
+Submitted batch job 228915
+Submitted batch job 228916
+Submitted batch job 228917
+Submitted batch job 228918
+Submitted batch job 228919
+Submitted batch job 228920
+Submitted batch job 228922
+Submitted batch job 228921
+Submitted batch job 228923
+Submitted batch job 228924
+Submitted batch job 228925
+Submitted batch job 228926
+Submitted batch job 228927
+Submitted batch job 228928
+Submitted batch job 228929
+Submitted batch job 228930
+Submitted batch job 228931
+Submitted batch job 228932
+
+_duplFunc
+Submitting job: sapin_dup_ign
+_demiDuplFunc
+Submitting job: sapin_dem_ign
+_baseNumRFunc
+Submitting job: sapin_bN_ign
+_gainFunc
+Submitting job: saxif_g_ign
+_lossFunc
+Submitting job: saxif_l_ign
+_duplFunc
+Submitting job: saxif_dup_ign
+_demiDuplFunc
+Submitting job: saxif_dem_ign
+_baseNumRFunc
+Submitting job: saxif_bN_ign
+_gainFunc
+Submitting job: primu_g_ign
+_lossFunc
+Submitting job: primu_l_ign
+_duplFunc
+Submitting job: primu_dup_ign
+_demiDuplFunc
+Submitting job: primu_dem_ign
+_baseNumRFunc
+Submitting job: primu_bN_ign
+_gainFunc
+Submitting job: erica_g_ign
+_lossFunc
+Submitting job: erica_l_ign
+_duplFunc
+Submitting job: erica_dup_ign
+_demiDuplFunc
+Submitting job: erica_dem_ign
+_baseNumRFunc
+Submitting job: erica_bN_ign
+_gainFunc
+Submitting job: aspar_g_ign
+_lossFunc
+Submitting job: aspar_l_ign
+_duplFunc
+Submitting job: aspar_dup_ign
+_demiDuplFunc
+Submitting job: aspar_dem_ign
+_baseNumRFunc
+Submitting job: aspar_bN_ign
+_gainFunc
+Submitting job: melan_g_ign
+_lossFunc
+Submitting job: melan_l_ign
+_duplFunc
+Submitting job: melan_dup_ign
+_demiDuplFunc
+Submitting job: melan_dem_ign
+_baseNumRFunc
+Submitting job: melan_bN_ign
+_gainFunc
+Submitting job: rubia_g_ign
+_lossFunc
+Submitting job: rubia_l_ign
+_duplFunc
+Submitting job: rubia_dup_ign
+_demiDuplFunc
+Submitting job: rubia_dem_ign
+_baseNumRFunc
+Submitting job: rubia_bN_ign
+_gainFunc
+Submitting job: oleac_g_ign
+_lossFunc
+Submitting job: oleac_l_ign
+_duplFunc
+Submitting job: oleac_dup_ign
+_demiDuplFunc
+Submitting job: oleac_dem_ign
+_baseNumRFunc
+Submitting job: oleac_bN_ign
+_gainFunc
+Submitting job: arace_g_ign
+_lossFunc
+Submitting job: arace_l_ign
+_duplFunc
+Submitting job: arace_dup_ign
+_demiDuplFunc
+Submitting job: arace_dem_ign
+_baseNumRFunc
+Submitting job: arace_bN_ign
+_gainFunc
+Submitting job: polyg_g_ign
+_lossFunc
+Submitting job: polyg_l_ign
+_duplFunc
+Submitting job: polyg_dup_ign
+_demiDuplFunc
+Submitting job: polyg_dem_ign
+_baseNumRFunc
+Submitting job: polyg_bN_ign
+_gainFunc
+Submitting job: prote_g_ign
+_lossFunc
+Submitting job: prote_l_ign
+_duplFunc
+Submitting job: prote_dup_ign
+_demiDuplFunc
+Submitting job: prote_dem_ign
+_baseNumRFunc
+Submitting job: prote_bN_ign
+_gainFunc
+Submitting job: ranun_g_ign
+_lossFunc
+Submitting job: ranun_l_ign
+_duplFunc
+Submitting job: ranun_dup_ign
+_demiDuplFunc
+Submitting job: ranun_dem_ign
+_baseNumRFunc
+Submitting job: ranun_bN_ign
+_gainFunc
+Submitting job: solan_g_ign
+_lossFunc
+Submitting job: solan_l_ign
+_duplFunc
+Submitting job: solan_dup_ign
+_demiDuplFunc
+Submitting job: solan_dem_ign
+_baseNumRFunc
+Submitting job: solan_bN_ign
+_gainFunc
+Submitting job: rosac_g_ign
+_lossFunc
+Submitting job: rosac_l_ign
+_duplFunc
+Submitting job: rosac_dup_ign
+_demiDuplFunc
+Submitting job: rosac_dem_ign
+_baseNumRFunc
+Submitting job: rosac_bN_ign
+_gainFunc
+Submitting job: colch_g_ign
+_lossFunc
+Submitting job: colch_l_ign
+_duplFunc
+Submitting job: colch_dup_ign
+_demiDuplFunc
+Submitting job: colch_dem_ign
+_baseNumRFunc
+Submitting job: colch_bN_ign
+_gainFunc
+Submitting job: balsa_g_ign
+_lossFunc
+Submitting job: balsa_l_ign
+_duplFunc
+Submitting job: balsa_dup_ign
+_demiDuplFunc
+Submitting job: balsa_dem_ign
+_baseNumRFunc
+Submitting job: balsa_bN_ign
+_gainFunc
+Submitting job: morac_g_ign
+_lossFunc
+Submitting job: morac_l_ign
+_duplFunc
+Submitting job: morac_dup_ign
+_demiDuplFunc
+Submitting job: morac_dem_ign
+_baseNumRFunc
+Submitting job: morac_bN_ign
+_gainFunc
+Submitting job: rutac_g_ign
+_lossFunc
+Submitting job: rutac_l_ign
+_duplFunc
+Submitting job: rutac_dup_ign
+_demiDuplFunc
+Submitting job: rutac_dem_ign
+_baseNumRFunc
+Submitting job: rutac_bN_ign
+_gainFunc
+Submitting job: lythr_g_ign
+_lossFunc
+Submitting job: lythr_l_ign
+_duplFunc
+Submitting job: lythr_dup_ign
+_demiDuplFunc
+Submitting job: lythr_dem_ign
+_baseNumRFunc
+Submitting job: lythr_bN_ign
+_gainFunc
+Submitting job: apiac_g_ign
+_lossFunc
+Submitting job: apiac_l_ign
+_duplFunc
+Submitting job: apiac_dup_ign
+_demiDuplFunc
+Submitting job: apiac_dem_ign
+_baseNumRFunc
+Submitting job: apiac_bN_ign
