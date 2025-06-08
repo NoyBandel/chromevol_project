@@ -16,8 +16,8 @@ def create_job_format_for_all_jobs(path: str, job_name: str, memory: str, queue:
         text += f"{cmd}\n"
     else:
         text += f"#SBATCH --job-name={job_name}\n"
-        text += f"#SBATCH --account=power-general-users\n"
-        text += f"#SBATCH --partition=power-general\n"
+        text += f"#SBATCH --account=itaym-users\n"
+        text += f"#SBATCH --partition=itaym\n"
         text += f"#SBATCH --ntasks={ncpu}\n"
         text += f"#SBATCH --cpus-per-task=1\n"
         text += f"#SBATCH --time=7-00:00:00\n"
