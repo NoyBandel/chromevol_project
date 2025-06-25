@@ -15,6 +15,7 @@ CE_LOSS_FUNC = "_lossFunc"
 CE_DUPL_FUNC = "_duplFunc"
 CE_DEMI_DUPL_FUNC = "_demiDuplFunc"
 CE_BASE_NUM_FUNC = "_baseNumRFunc"
+CE_TRANSITIONS_FUNCS = [CE_GAIN_FUNC, CE_LOSS_FUNC, CE_DUPL_FUNC, CE_DEMI_DUPL_FUNC, CE_BASE_NUM_FUNC]
 
 CE_GAIN_INIT = "_gain_1"
 CE_LOSS_INIT = "_loss_1"
@@ -22,6 +23,14 @@ CE_DUPL_INIT = "_dupl_1"
 CE_DEMI_INIT = "_demiPloidyR_1"
 CE_BASE_NUM_R_INIT = "_baseNumR_1"
 CE_BASE_CHROM_NUM_INIT = "_baseNum_1"
+CE_TRANSITIONS_INIT = [
+    CE_GAIN_INIT,
+    CE_LOSS_INIT,
+    CE_DUPL_INIT,
+    CE_DEMI_INIT,
+    CE_BASE_NUM_R_INIT,
+    CE_BASE_CHROM_NUM_INIT
+]
 
 
 ### # analysis # ###
@@ -47,6 +56,7 @@ LABEL_TRANSITIONS_LST = [
     LABEL_GAIN,
     LABEL_LOSS
 ]
+LABEL_BASE_NUMR = "baseNumR"
 
 # family_data_with_chrom: chrom count and family size columns names
 LABEL_MIN_CHROM = "min_chrom"
@@ -63,6 +73,7 @@ LABEL_PARAMS_SHORT = "param"
 
 
 LABEL_AICc = "AICc"
+LABEL_CONSTS_PARAMS  = "consts_params"
 
 # graph utils
 # f"{save_fig_folder}{transition}_all_chosen_rate_functions_plot.png"
@@ -100,6 +111,28 @@ FUNC_CE_TO_LABEL = {
 
 FUNC_LABEL_TO_CE = {v: k for k, v in FUNC_CE_TO_LABEL.items()}
 
+
+LABEL_TRANSITIONS_LST_TO_CE_TRANSITIONS_INIT = {
+    LABEL_BASE_NUM: CE_BASE_CHROM_NUM_INIT,
+    LABEL_DEMI: CE_DEMI_INIT,
+    LABEL_DUPL: CE_DUPL_INIT,
+    LABEL_GAIN: CE_GAIN_INIT,
+    LABEL_LOSS: CE_LOSS_INIT,
+    LABEL_BASE_NUMR: CE_BASE_NUM_R_INIT
+}
+
+CE_TRANSITIONS_INIT_TO_LABEL_TRANSITIONS_LST = {v: k for k, v in LABEL_TRANSITIONS_LST_TO_CE_TRANSITIONS_INIT.items()}
+
+
+LABEL_TRANSITIONS_LST_TO_CE_TRANSITIONS_FUNCS = {
+    LABEL_BASE_NUM: CE_BASE_NUM_FUNC,
+    LABEL_DEMI: CE_DEMI_DUPL_FUNC,
+    LABEL_DUPL: CE_DUPL_FUNC,
+    LABEL_GAIN: CE_GAIN_FUNC,
+    LABEL_LOSS: CE_LOSS_FUNC
+}
+
+CE_TRANSITIONS_FUNCS_TO_LABEL_TRANSITIONS = {v: k for k, v in LABEL_TRANSITIONS_LST_TO_CE_TRANSITIONS_FUNCS.items()}
 
 
 

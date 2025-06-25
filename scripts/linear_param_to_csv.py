@@ -110,10 +110,10 @@ def linear_analysis_file(main_output_folder: str, raw_results_csvs_folder: str) 
         })
 
         # Extract AICc values
-        lin_AICc, constant_AICc, ignore_AICc = {}, {}, {}
+        linear_AICc, constant_AICc, ignore_AICc = {}, {}, {}
         for family, row in AICc_df.iterrows():
             family_name = str(family).replace(f"_{LABEL_AICc}", "")
-            lin_AICc[family_name] = row[LABEL_LINEAR]
+            linear_AICc[family_name] = row[LABEL_LINEAR]
             constant_AICc[family_name] = row[LABEL_CONSTANT]
             ignore_AICc[family_name] = row[LABEL_IGNORE]
 
@@ -121,7 +121,7 @@ def linear_analysis_file(main_output_folder: str, raw_results_csvs_folder: str) 
             "lin_intersection": p0_intersections,
             "lin_slope": p1_slopes,
             "lin_behavior_class": behavior_class,
-            "lin_AICc": lin_AICc,
+            "linear_AICc": linear_AICc,
             "constant_AICc": constant_AICc,
             "ignore_AICc": ignore_AICc,
         }
@@ -136,25 +136,28 @@ def linear_analysis_file(main_output_folder: str, raw_results_csvs_folder: str) 
 
         # Save families where linear AICc is best
         best_lin_df = output_df[
-            (output_df["lin_AICc"].astype(float) < output_df["constant_AICc"].astype(float)) &
-            (output_df["lin_AICc"].astype(float) < output_df["ignore_AICc"].astype(float))
+            (output_df["linear_AICc"].astype(float) < output_df["constant_AICc"].astype(float)) &
+            (output_df["linear_AICc"].astype(float) < output_df["ignore_AICc"].astype(float))
         ]
         best_lin_path = os.path.join(transition_folder, f"{transition}_best_linear_AICc.csv")
         best_lin_df.to_csv(best_lin_path)
 
         # Save families where ignore model is NOT the best
         not_ignore_best_df = output_df[
-            (output_df["ignore_AICc"].astype(float) > output_df["lin_AICc"].astype(float)) |
+            (output_df["ignore_AICc"].astype(float) > output_df["linear_AICc"].astype(float)) |
             (output_df["ignore_AICc"].astype(float) > output_df["constant_AICc"].astype(float))
         ]
         not_ignore_best_path = os.path.join(transition_folder, f"{transition}_ignore_not_best.csv")
         not_ignore_best_df.to_csv(not_ignore_best_path)
 
 
-# main_output_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
-# raw_results_csvs_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
-#
-# linear_analysis_file(main_output_folder, raw_results_csvs_folder)
+main_output_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
+raw_results_csvs_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
+
+linear_analysis_file(main_output_folder, raw_results_csvs_folder)
+
+
+#### add the likelihood values in order to asses optimization problems
 
 
 

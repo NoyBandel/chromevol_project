@@ -1,80 +1,154 @@
 import pandas as pd
-import argparse
-import sys
+import ast
+import os
+from constants import *
 
-# for each transition type:
-#   from the families for which the linear function was chosen over const.
-#   search for 5 families with linear slope values, a, closest to 0
-
-
-# for each such family:
-#   from linear - extract the intersection value, b
-#   from const - extract the intersection value, c
-#   compare them:
-#       if b,c are very close - no optimization problem
-#       else - may be optimization problem
-#           rerun with const func value set to b
-
-def optimization_problem_use_cases(transitions: list[str], linear_analysis_input_folder: str, output_folder: str,
-                                   num_of_families_to_test: int, analysis_root_folder: str) -> None:
-    for transition in transitions:
-        print(f"-------{transition}-------")
-        df = pd.read_csv(f"{linear_analysis_input_folder}{transition}_vs_const_linear_parameters.csv", index_col=0)
-        closest_to_zero_df = df.loc[df['p1_rate'].abs().sort_values().index[:num_of_families_to_test]]
-
-        closest_to_zero_df["const_AICc"] = None
-        closest_to_zero_df["lin_AICc"] = None
-        closest_to_zero_df["constant_value"] = None
-        closest_to_zero_df[f"{transition}_relative_diff"] = None
-
-        for family_row in closest_to_zero_df.itertuples():
-            family_name = family_row.Index
-            print(f"family {family_name}")
-            a = family_row.p1_rate
-            print(f"a = {a}")
-            b = family_row.p0
-            print(f"b = {b}")
-
-            raw_results_df = pd.read_csv(f"{analysis_root_folder}{transition}_raw_results.csv", index_col=0)
-            c = raw_results_df.loc[f"{family_name}_param", "constant"]
-            c = float(c.strip("[]").strip("'"))
-            print(f"c = {c}")
-            const_AICc = raw_results_df.loc[f"{family_name}_AICc", "constant"]
-            lin_AICc = raw_results_df.loc[f"{family_name}_AICc", "linear"]
-
-            closest_to_zero_df.at[family_name, "const_AICc"] = const_AICc
-            closest_to_zero_df.at[family_name, "lin_AICc"] = lin_AICc
-            closest_to_zero_df.at[family_name, "constant_value"] = c
-            closest_to_zero_df.at[family_name, f"{transition}_relative_diff"] = abs(c - b) / c
-            print(f"relative_diff = {abs(c - b) / c}\n")
-
-        closest_to_zero_df.to_csv(f"{output_folder}{transition}_optimization_problem_use_cases.csv")
+LIN_FILE_SUFFIX = "_linear_analysis.csv"
+RAW_RESULTS_SUFFIX = "_all_families_over_50_modified_raw_results.csv"
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Identify optimization problem use cases.")
-    parser.add_argument("--transitions", type=str, required=True, nargs="+", help="List of transition types.")
-    parser.add_argument("--linear_analysis_input_folder", type=str, required=True,
-                        help="Path to linear vs constant parameter analysis files.")
-    parser.add_argument("--output_folder", type=str, required=True, help="Path to save output files.")
-    parser.add_argument("--num_of_families_to_test", type=int, default=5,
-                        help="Number of families with slope values closest to 0 to test.")
-    parser.add_argument("--analysis_root_folder", type=str, required=True, help="Path to raw results files.")
-    args = parser.parse_args()
+def enrich_with_likelihoods(df, families, raw_results_df, label_prefixes):
+    for fam in families:
+        row = f"{fam}_likelihood"
+        if row in raw_results_df.index:
+            for label in label_prefixes:
+                df.loc[fam, f"{label}_likelihood"] = raw_results_df.loc[row, label]
+        else:
+            print(f"Warning: {row} not found in raw results")
+    return df
 
-    log_file = f"{args.output_folder}optimization_log.log"
 
-    with open(log_file, "w") as log:
-        sys.stdout = log
-        sys.stderr = log
-        optimization_problem_use_cases(
-            args.transitions,
-            args.linear_analysis_input_folder,
-            args.output_folder,
-            args.num_of_families_to_test,
-            args.analysis_root_folder
+def enrich_with_const_params(df, families, raw_results_df, param_keys, model_column):
+    for key in param_keys:
+        df[key] = None
+
+    for fam in families:
+        param_row = f"{fam}_{LABEL_CONSTS_PARAMS}"
+        if param_row in raw_results_df.index:
+            param_str = raw_results_df.loc[param_row, model_column]
+            try:
+                param_dict = ast.literal_eval(param_str)
+                if isinstance(param_dict, dict):
+                    for key in param_keys:
+                        df.loc[fam, key] = param_dict.get(key)
+                else:
+                    print(f"Parsed params for {fam} are not a dictionary.")
+            except Exception as e:
+                print(f"Failed to parse params for {fam}: {e}")
+        else:
+            print(f"{param_row} not found in raw results")
+    return df
+
+
+def extract_best_constant_value(df, families, raw_results_df):
+    df['best_constant'] = None
+    for fam in families:
+        param_row = f"{fam}_{LABEL_PARAM}"
+        if param_row in raw_results_df.index:
+            try:
+                raw_val = raw_results_df.loc[param_row, LABEL_CONSTANT]
+                val = float(ast.literal_eval(raw_val)[0])
+                df.loc[fam, 'best_constant'] = val
+            except Exception as e:
+                print(f"Failed to extract best constant value for {fam}: {e}")
+        else:
+            print(f"{param_row} not found in raw results")
+    return df
+
+
+def optimization_problem_use_cases(linear_analysis_folder: str,
+                                   num_of_families_to_test: int,
+                                   raw_results_folder: str) -> None:
+
+    for transition in LABEL_TRANSITIONS_LST:
+        if transition in [LABEL_DEMI, LABEL_BASE_NUM]:
+            continue
+
+        print(f"------- {transition} -------")
+
+        lin_csv_path = os.path.join(linear_analysis_folder, transition, f"{transition}{LIN_FILE_SUFFIX}")
+        raw_results_path = os.path.join(raw_results_folder, f"{transition}{RAW_RESULTS_SUFFIX}")
+
+        df = pd.read_csv(lin_csv_path, index_col=0)
+        raw_results_df = pd.read_csv(raw_results_path, index_col=0)
+
+        # Identify best model
+        df['best_model'] = df[[f"{LABEL_IGNORE}_{LABEL_AICc}",
+                               f"{LABEL_LINEAR}_{LABEL_AICc}",
+                               f"{LABEL_CONSTANT}_{LABEL_AICc}"]].idxmin(axis=1)
+
+        param_keys = [label for label in LABEL_TRANSITIONS_LST if label != transition]
+        param_keys.append(LABEL_BASE_NUMR)
+
+        # --- LINEAR best but |slope| ≈ 0 ---
+        linear_best_df = df[df['best_model'] == f"{LABEL_LINEAR}_{LABEL_AICc}"]
+        linear_best_minimal_slope = linear_best_df.reindex(
+            linear_best_df['lin_slope'].abs().sort_values().head(num_of_families_to_test).index
+        ).copy()
+
+        linear_families = list(linear_best_minimal_slope.index)
+
+        linear_best_minimal_slope = enrich_with_likelihoods(
+            linear_best_minimal_slope,
+            linear_families,
+            raw_results_df,
+            [LABEL_CONSTANT, LABEL_LINEAR, LABEL_IGNORE]
         )
 
+        linear_best_minimal_slope = enrich_with_const_params(
+            linear_best_minimal_slope,
+            linear_families,
+            raw_results_df,
+            param_keys,
+            LABEL_LINEAR
+        )
 
-if __name__ == "__main__":
-    main()
+        output_path = os.path.join(
+            linear_analysis_folder, transition,
+            f"{transition}_optimization_use_case_linear_best_minimal_slope.csv"
+        )
+        linear_best_minimal_slope.to_csv(output_path)
+        print(f"Saved: {output_path}")
+
+        # --- CONSTANT best but |slope| ≫ 0 ---
+        constant_best_df = df[df['best_model'] == f"{LABEL_CONSTANT}_{LABEL_AICc}"]
+        constant_best_extreme_slope = constant_best_df.reindex(
+            constant_best_df['lin_slope'].abs().sort_values(ascending=False).head(num_of_families_to_test).index
+        ).copy()
+
+        constant_families = list(constant_best_extreme_slope.index)
+
+        constant_best_extreme_slope = enrich_with_likelihoods(
+            constant_best_extreme_slope,
+            constant_families,
+            raw_results_df,
+            [LABEL_CONSTANT, LABEL_LINEAR, LABEL_IGNORE]
+        )
+
+        constant_best_extreme_slope = enrich_with_const_params(
+            constant_best_extreme_slope,
+            constant_families,
+            raw_results_df,
+            param_keys,
+            LABEL_CONSTANT
+        )
+
+        constant_best_extreme_slope = extract_best_constant_value(
+            constant_best_extreme_slope,
+            constant_families,
+            raw_results_df
+        )
+
+        output_path = os.path.join(
+            linear_analysis_folder, transition,
+            f"{transition}_optimization_use_case_constant_best_extreme_slope.csv"
+        )
+        constant_best_extreme_slope.to_csv(output_path)
+        print(f"Saved: {output_path}")
+
+
+### run
+linear_analysis_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
+num_of_families_to_test = 5
+raw_results_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
+optimization_problem_use_cases(linear_analysis_folder, num_of_families_to_test, raw_results_folder)
