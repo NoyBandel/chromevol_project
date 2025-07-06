@@ -9,10 +9,10 @@ RAW_RESULTS_SUFFIX = "_all_families_over_50_modified_raw_results.csv"
 
 def enrich_with_likelihoods(df, families, raw_results_df, label_prefixes):
     for fam in families:
-        row = f"{fam}_likelihood"
+        row = f"{fam}_{LABEL_LIKELIHOOD}"
         if row in raw_results_df.index:
             for label in label_prefixes:
-                df.loc[fam, f"{label}_likelihood"] = raw_results_df.loc[row, label]
+                df.loc[fam, f"{label}_{LABEL_LIKELIHOOD}"] = raw_results_df.loc[row, label]
         else:
             print(f"Warning: {row} not found in raw results")
     return df

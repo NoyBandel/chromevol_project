@@ -92,7 +92,7 @@ TRANSITION_MODIFIED_CHOSEN_SUFFIX = "from_const_run_to_modified_chosen_model.csv
 RAW_RESULTS = "raw_results.csv"
 
 LABEL_PARAM = "param"
-
+LABEL_LIKELIHOOD = "likelihood"
 EACH_FAMILY = "each_family"
 
 

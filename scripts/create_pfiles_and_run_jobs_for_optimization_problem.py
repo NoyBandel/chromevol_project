@@ -37,7 +37,7 @@ def build_init_parameter_string(param_dict: Dict[str, str], family_row: Series, 
     output_str = ""
     for i, (column_name, chromevol_pfile_init) in enumerate(param_dict.items(), start=1):
         if opt_problem_type == "run_lin" and chromevol_pfile_init == chromevol_pfile_tested_transition_init:
-            output_str += f"{chromevol_pfile_init} = {str(i)};{family_row[column_name]},0.1\n"
+            output_str += f"{chromevol_pfile_init} = {str(i)};{family_row[column_name]},0\n"
             continue
         output_str += f"{chromevol_pfile_init} = {str(i)};{family_row[column_name]}\n"
     print(output_str)
