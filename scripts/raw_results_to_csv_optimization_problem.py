@@ -1,43 +1,45 @@
-from typing import Dict, Tuple
+from typing import Dict, List, Union, Any
 import pandas as pd
 from pathlib import Path
 from constants import *
 import re
 import ast
+import matplotlib.pyplot as plt
+
 
 main_dict = {
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/dupl/lin_was_chosen_run_const_with_lin_params/"):
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/dupl/run_const_with_lin_params/"):
     [Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/"),
      LABEL_DUPL,
      LABEL_CONSTANT],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/dupl/const_was_chosen_run_lin_with_const_params/"):
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/dupl/run_lin_with_const_params/"):
     [Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/"),
     LABEL_DUPL,
     LABEL_LINEAR],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/gain/lin_was_chosen_run_const_with_lin_params/"):
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/gain/run_const_with_lin_params/"):
     [Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"),
     LABEL_GAIN,
     LABEL_CONSTANT],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/gain/const_was_chosen_run_lin_with_const_params/"):
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/gain/run_lin_with_const_params/"):
     [Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"),
     LABEL_GAIN,
     LABEL_LINEAR],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/loss/lin_was_chosen_run_const_with_lin_params/"):
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/loss/run_const_with_lin_params/"):
     [Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"),
     LABEL_LOSS,
     LABEL_CONSTANT],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/loss/const_was_chosen_run_lin_with_const_params/"):
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/loss/run_lin_with_const_params/"):
     [Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"),
     LABEL_LOSS,
     LABEL_LINEAR]
 }
 
-def raw_results_to_csv(main_dict: Dict[Path, Tuple]) -> None:
+def raw_results_to_csv(main_dict: Dict[Path, List[Union[Path, Any]]]) -> None:
     for raw_results_path, output_data in main_dict.items():
         output_folder, tested_transition_type, tested_transition_func = output_data
 
@@ -102,63 +104,63 @@ def raw_results_to_csv(main_dict: Dict[Path, Tuple]) -> None:
             df.at[LABEL_PARAM, family_name] = param_list
             df.at[LABEL_CONSTS_PARAMS, family_name] = consts_param_dict
 
-        df.to_csv(output_folder / f"{tested_transition_type}_run_{tested_transition_func}_{RAW_RESULTS}")
+        df.to_csv(output_folder / f"{tested_transition_type}_all_families_run_{tested_transition_func}_{RAW_RESULTS}")
 
 
 summarize_dict = {
     # dupl
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_optimization_use_case_constant_best_extreme_slope.csv"): [
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_all_families_data_for_run_lin_with_const_params.csv"): [
         Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/"),
-        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_run_linear_raw_results.csv"),
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_all_families_run_linear_raw_results.csv"),
         LABEL_DUPL,
         LABEL_LINEAR
     ],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_optimization_use_case_linear_best_minimal_slope.csv"): [
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_all_families_data_for_run_const_with_lin_params.csv"): [
         Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/"),
-        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_run_constant_raw_results.csv"),
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_all_families_run_constant_raw_results.csv"),
         LABEL_DUPL,
         LABEL_CONSTANT
     ],
 
     # gain
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_optimization_use_case_constant_best_extreme_slope.csv"): [
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_data_for_run_lin_with_const_params.csv"): [
         Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"),
-        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_run_linear_raw_results.csv"),
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_run_linear_raw_results.csv"),
         LABEL_GAIN,
         LABEL_LINEAR
     ],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_optimization_use_case_linear_best_minimal_slope.csv"): [
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_data_for_run_const_with_lin_params.csv"): [
         Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"),
-        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_run_constant_raw_results.csv"),
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_run_constant_raw_results.csv"),
         LABEL_GAIN,
         LABEL_CONSTANT
     ],
 
     # loss
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_optimization_use_case_constant_best_extreme_slope.csv"): [
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_all_families_data_for_run_lin_with_const_params.csv"): [
         Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"),
-        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_run_linear_raw_results.csv"),
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_all_families_run_linear_raw_results.csv"),
         LABEL_LOSS,
         LABEL_LINEAR
     ],
 
-    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_optimization_use_case_linear_best_minimal_slope.csv"): [
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_all_families_data_for_run_const_with_lin_params.csv"): [
         Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"),
-        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_run_constant_raw_results.csv"),
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_all_families_run_constant_raw_results.csv"),
         LABEL_LOSS,
         LABEL_CONSTANT
     ]
 }
 
-def summarize_optimization_problem_use_cases(summarize_dict) -> None:
+def summarize_optimization_problem_use_cases_sheet_per_family(summarize_dict) -> None:
     for initial_linear_analysis_file, output_folder_and_optimization_test_data in summarize_dict.items():
         output_folder, optimization_test_raw_results, tested_transition_type, tested_transition_func = output_folder_and_optimization_test_data
         df_old = pd.read_csv(initial_linear_analysis_file, index_col=0)
         df_new = pd.read_csv(optimization_test_raw_results, index_col=0)
 
-        output_excel_path = output_folder / f"{tested_transition_type}_{tested_transition_func}_summarize_optimization_problem_use_cases.xlsx"
+        output_excel_path = output_folder / f"{tested_transition_type}_all_families_{tested_transition_func}_summarize_optimization_problem.xlsx"
 
         with pd.ExcelWriter(output_excel_path) as writer:
             for family in df_new.columns:
@@ -224,10 +226,107 @@ def summarize_optimization_problem_use_cases(summarize_dict) -> None:
                 output_family_df.to_excel(writer, sheet_name=family[:31])
 
 
+summarize_to_one_file_dict = {
+    # dupl
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_all_families_linear_summarize_optimization_problem.xlsx"): [
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/"),
+        LABEL_DUPL,
+        LABEL_LINEAR
+    ],
+
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/dupl_all_families_constant_summarize_optimization_problem.xlsx"): [
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/dupl/"),
+        LABEL_DUPL,
+        LABEL_CONSTANT
+    ],
+
+    # gain
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_linear_summarize_optimization_problem.xlsx"): [
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"),
+        LABEL_GAIN,
+        LABEL_LINEAR
+    ],
+
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_constant_summarize_optimization_problem.xlsx"): [
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"),
+        LABEL_GAIN,
+        LABEL_CONSTANT
+    ],
+
+    # loss
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_all_families_linear_summarize_optimization_problem.xlsx"): [
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"),
+        LABEL_LOSS,
+        LABEL_LINEAR
+    ],
+
+    Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/loss_all_families_constant_summarize_optimization_problem.xlsx"): [
+        Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"),
+        LABEL_LOSS,
+        LABEL_CONSTANT
+    ]
+}
+
+def summarize_optimization_problem_across_families(summarize_to_one_file_dict) -> None:
+    for sheet_per_family_file, output_folder_and_optimization_test_data in summarize_to_one_file_dict.items():
+        output_folder, tested_transition_type, tested_transition_func = output_folder_and_optimization_test_data
+
+        result_dict = {
+            "family": [],
+            LABEL_AICc: [],
+            LABEL_LIKELIHOOD: []
+        }
+        excel_file = pd.ExcelFile(sheet_per_family_file)
+
+        for family_name in excel_file.sheet_names:
+            df = pd.read_excel(excel_file, sheet_name=family_name, index_col=0)
+            summarize_aicc = df.at[LABEL_AICc, "summarize"]
+            summarize_likelihood = df.at[LABEL_LIKELIHOOD, "summarize"]
+
+            result_dict["family"].append(family_name)
+
+            if tested_transition_func == LABEL_CONSTANT:
+                # CONSTANT was tested, so we ask: is new_constant better than old_linear?
+                aicc_val = 1 if summarize_aicc == "new_constant" else 0
+                lik_val = 1 if summarize_likelihood == "new_constant" else 0
+            elif tested_transition_func == LABEL_LINEAR:
+                # LINEAR was tested, so we ask: is new_linear better than old_constant?
+                aicc_val = 1 if summarize_aicc == "new_linear" else 0
+                lik_val = 1 if summarize_likelihood == "new_linear" else 0
+            else:
+                raise ValueError(f"Unexpected transition function: {tested_transition_func}")
+
+            result_dict[LABEL_AICc].append(aicc_val)
+            result_dict[LABEL_LIKELIHOOD].append(lik_val)
+
+        # Create and save dataframe
+        df_summary = pd.DataFrame(result_dict)
+        output_file = output_folder / f"{tested_transition_type}_all_families_run_{tested_transition_func}_final_opt_problem_summary.csv"
+        df_summary.to_csv(output_file, index=False)
+
+        # ===== Pie Charts =====
+        def plot_pie(column, label):
+            counts = df_summary[column].value_counts().sort_index()
+            labels = ["No opt problem (0)", "Opt problem (1)"]
+            values = [counts.get(0, 0), counts.get(1, 0)]
+
+            plt.figure(figsize=(5, 5))
+            plt.pie(values, labels=labels, autopct="%1.1f%%", startangle=140, colors=["#8ecae6", "#fb8500"])
+            plt.title(f"{tested_transition_type} — {tested_transition_func} — {label}")
+            plt.axis("equal")
+
+            output_pie_path = output_folder / f"{tested_transition_type}_{tested_transition_func}_{label}_opt_problem_pie.png"
+            plt.savefig(output_pie_path)
+            plt.close()
+
+        plot_pie(LABEL_AICc, "AICc")
+        plot_pie(LABEL_LIKELIHOOD, "likelihood")
+
 
 
 
 
 ### run
-#raw_results_to_csv(main_dict)
-summarize_optimization_problem_use_cases(summarize_dict)
+# raw_results_to_csv(main_dict)
+# summarize_optimization_problem_use_cases_sheet_per_family(summarize_dict)
+# summarize_optimization_problem_across_families(summarize_to_one_file_dict)

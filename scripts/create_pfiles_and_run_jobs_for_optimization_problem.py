@@ -5,7 +5,7 @@ from pandas.core.interchange.dataframe_protocol import DataFrame
 from create_job_files import create_job_format_for_all_jobs
 from pathlib import Path
 import random
-from typing import List, Dict, Tuple
+from typing import Dict, Tuple
 import pandas as pd
 from constants import *
 
@@ -68,8 +68,8 @@ def build_param_file_content(
         "_optimizationMethod = Brent",
         "_baseNumOptimizationMethod = Ranges",
         "_minChrNum = -1",
-        "_optimizePointsNum = 10,3,1",
-        "_optimizeIterNum = 0,2,5",
+        "_optimizePointsNum = 1",
+        "_optimizeIterNum = 7",
         "_maxParsimonyBound = true",
         "_tolParamOptimization = 0.1",
         f"_seed = {random.randint(1, 8000)}",
@@ -106,7 +106,7 @@ def create_param_files_and_run_jobs(
     linear_analysis_main_folder: Path
 ) -> None:
     for transition in LABEL_TRANSITIONS_LST:
-        if transition in [LABEL_DEMI, LABEL_BASE_NUM]:
+        if transition in [LABEL_DEMI, LABEL_BASE_NUM, LABEL_LOSS, LABEL_GAIN]:
             continue
 
         print(f"\n====== Transition: {transition} ======")
@@ -117,12 +117,21 @@ def create_param_files_and_run_jobs(
             continue
 
         for file in transition_folder.iterdir():
-            if file.name.startswith(f"{transition}_{OPT_FILE_RECOGNIZER}_{LABEL_CONSTANT}"):
-                opt_problem_type = "run_lin"
-                run_folder_name = "const_was_chosen_run_lin_with_const_params"
-            elif file.name.startswith(f"{transition}_{OPT_FILE_RECOGNIZER}_{LABEL_LINEAR}"):
+            # if file.name.startswith(f"{transition}_{OPT_FILE_RECOGNIZER}_{LABEL_CONSTANT}"):
+            #     opt_problem_type = "run_lin"
+            #     run_folder_name = "const_was_chosen_run_lin_with_const_params"
+            # elif file.name.startswith(f"{transition}_{OPT_FILE_RECOGNIZER}_{LABEL_LINEAR}"):
+            #     opt_problem_type = "run_const"
+            #     run_folder_name = "lin_was_chosen_run_const_with_lin_params"
+            # else:
+            #     continue
+
+            if file.name.startswith(f"{transition}_all_families_data_for_run_const"):
                 opt_problem_type = "run_const"
-                run_folder_name = "lin_was_chosen_run_const_with_lin_params"
+                run_folder_name = "run_const_with_lin_params"
+            # if file.name.startswith(f"{transition}_all_families_data_for_run_lin"):
+            #     opt_problem_type = "run_lin"
+            #     run_folder_name = "run_lin_with_const_params"
             else:
                 continue
 
@@ -159,8 +168,18 @@ def create_param_files_and_run_jobs(
                 time.sleep(3)
 
 ### run
+# families_source_dir = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_input_data/families_chrom_input/")
+# chromevol_raw_results_dir = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/")
+# linear_analysis_main_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/")
+#
+# create_param_files_and_run_jobs(families_source_dir, chromevol_raw_results_dir, linear_analysis_main_folder)
+
+
 families_source_dir = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_input_data/families_chrom_input/")
-chromevol_raw_results_dir = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/optimization_problem_use_cases/")
+chromevol_raw_results_dir = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/")
 linear_analysis_main_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/")
 
 create_param_files_and_run_jobs(families_source_dir, chromevol_raw_results_dir, linear_analysis_main_folder)
+
+
+

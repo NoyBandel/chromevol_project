@@ -18,7 +18,7 @@ def enrich_with_likelihoods(df, families, raw_results_df, label_prefixes):
     return df
 
 
-def enrich_with_const_params(df, families, raw_results_df, param_keys, model_column):
+def enrich_with_params(df, families, raw_results_df, param_keys, model_column):
     for key in param_keys:
         df[key] = None
 
@@ -95,7 +95,7 @@ def optimization_problem_use_cases(linear_analysis_folder: str,
             [LABEL_CONSTANT, LABEL_LINEAR, LABEL_IGNORE]
         )
 
-        linear_best_minimal_slope = enrich_with_const_params(
+        linear_best_minimal_slope = enrich_with_params(
             linear_best_minimal_slope,
             linear_families,
             raw_results_df,
@@ -125,7 +125,7 @@ def optimization_problem_use_cases(linear_analysis_folder: str,
             [LABEL_CONSTANT, LABEL_LINEAR, LABEL_IGNORE]
         )
 
-        constant_best_extreme_slope = enrich_with_const_params(
+        constant_best_extreme_slope = enrich_with_params(
             constant_best_extreme_slope,
             constant_families,
             raw_results_df,
@@ -147,8 +147,91 @@ def optimization_problem_use_cases(linear_analysis_folder: str,
         print(f"Saved: {output_path}")
 
 
+def prepare_data_for_reciprocal_runs(linear_analysis_folder: str,
+                                   raw_results_folder: str) -> None:
+
+    for transition in LABEL_TRANSITIONS_LST:
+        if transition in [LABEL_DEMI, LABEL_BASE_NUM]:
+            continue
+
+        print(f"------- {transition} -------")
+
+        lin_csv_path = os.path.join(linear_analysis_folder, transition, f"{transition}{LIN_FILE_SUFFIX}")
+        raw_results_path = os.path.join(raw_results_folder, f"{transition}{RAW_RESULTS_SUFFIX}")
+
+        df = pd.read_csv(lin_csv_path, index_col=0)
+        raw_results_df = pd.read_csv(raw_results_path, index_col=0)
+
+        param_keys = [label for label in LABEL_TRANSITIONS_LST if label != transition]
+        param_keys.append(LABEL_BASE_NUMR)
+
+        # --- prepare for run CONST with LINEAR parameters ---
+        linear_df = df.copy()
+        linear_families = list(linear_df.index)
+
+        linear_df = enrich_with_likelihoods(
+            linear_df,
+            linear_families,
+            raw_results_df,
+            [LABEL_CONSTANT, LABEL_LINEAR, LABEL_IGNORE]
+        )
+
+        linear_df = enrich_with_params(
+            linear_df,
+            linear_families,
+            raw_results_df,
+            param_keys,
+            LABEL_LINEAR
+        )
+
+        output_path = os.path.join(
+            linear_analysis_folder, transition,
+            f"{transition}_all_families_data_for_run_const_with_lin_params.csv"
+        )
+        linear_df.to_csv(output_path)
+        print(f"Saved: {output_path}")
+
+        # --- prepare for run LINEAR with CONST parameters ---
+        constant_df = df.copy()
+        constant_families = list(constant_df.index)
+
+        constant_df = enrich_with_likelihoods(
+            constant_df,
+            constant_families,
+            raw_results_df,
+            [LABEL_CONSTANT, LABEL_LINEAR, LABEL_IGNORE]
+        )
+
+        constant_df = enrich_with_params(
+            constant_df,
+            constant_families,
+            raw_results_df,
+            param_keys,
+            LABEL_CONSTANT
+        )
+
+        constant_df = extract_best_constant_value(
+            constant_df,
+            constant_families,
+            raw_results_df
+        )
+
+        output_path = os.path.join(
+            linear_analysis_folder, transition,
+            f"{transition}_all_families_data_for_run_lin_with_const_params.csv"
+        )
+        constant_df.to_csv(output_path)
+        print(f"Saved: {output_path}")
+
+
+
 ### run
-linear_analysis_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
-num_of_families_to_test = 5
-raw_results_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
-optimization_problem_use_cases(linear_analysis_folder, num_of_families_to_test, raw_results_folder)
+# linear_analysis_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
+# num_of_families_to_test = 5
+# raw_results_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
+# optimization_problem_use_cases(linear_analysis_folder, num_of_families_to_test, raw_results_folder)
+
+#
+# linear_analysis_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
+# raw_results_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
+# prepare_data_for_reciprocal_runs(linear_analysis_folder, raw_results_folder)

@@ -47,22 +47,59 @@ def look_for_err(raw_results_path: Path, func_dir_name: str) -> None:
                         if "AICc of the best model" not in last_line:
                             err_lst.append((family_name, f"{transition_name} - no valid res"))
     if len(err_lst) == 0:
-        print(f"No error-files for func '{func_dir_name}'")
+        print(f"[v][v][v] func '{func_dir_name}'")
     else:
-        print(f"Errors for func '{func_dir_name}' in: {err_lst}")
+        print(f"[x] Errors for func '{func_dir_name}' !!! \n{err_lst}")
+        output_file_path = str(raw_results_path / f"error_summary_{func_dir_name}.csv")
+        df = pd.DataFrame(err_lst, columns=["Family", "Error"])
+        df.to_csv(output_file_path, index=False)
 
-# def err_to_csv(raw_results_path: Path) -> None:
 
+def look_for_err_one_func_type(raw_results_path: Path) -> None:
+    err_lst = []
+    for family_folder in raw_results_path.iterdir():
+        if not family_folder.is_dir():
+            continue
+        family_name = family_folder.name
+        err_file_path = raw_results_path / family_folder / "ERR.txt"
+        try:
+            with open(err_file_path, 'r') as file:
+                lines = file.readlines()
+                if len(lines) != 0:
+                    err_lst.append((family_name, f"ERR.txt not empty"))
+        except:
+            err_lst.append((family_name, f"job did not run"))
+            continue
+        res_file_path = raw_results_path / family_folder / "Results/chromEvol.res"
+        if not res_file_path.exists():
+            err_lst.append((family_name, f"no chromEvol.res file"))
+        else:
+            with open(res_file_path, 'r') as file:
+                last_line = file.readlines()[-1].strip()
+                if "AICc of the best model" not in last_line:
+                    err_lst.append((family_name, f"chromEvol.res file not valid"))
+    if len(err_lst) == 0:
+        print(f"[v][v][v] ")
+    else:
+        print(f"[x] Errors !!! \n{err_lst}")
+        output_file_path = str(raw_results_path / "error_summary.csv")
+        df = pd.DataFrame(err_lst, columns=["Family", "Error"])
+        df.to_csv(output_file_path, index=False)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Check for ERR.txt files with content in a directory structure.")
+    parser = argparse.ArgumentParser(description="Check chromEvol result directories for errors.")
     parser.add_argument("raw_results_path", type=str, help="Path to the root directory containing family folders.")
-    parser.add_argument("func_dir_name", type=str, help="The name of the function directory to check.")
+    parser.add_argument("func_dir_name", type=str, nargs="?", default=None,
+                        help="(Optional) Name of function directory (only for nested structure).")
+
     args = parser.parse_args()
     raw_results_path = Path(args.raw_results_path)
-    func_dir_name = args.func_dir_name
-    look_for_err(raw_results_path, func_dir_name)
+
+    if args.func_dir_name is None:
+        look_for_err_one_func_type(raw_results_path)
+    else:
+        look_for_err(raw_results_path, args.func_dir_name)
 
 if __name__ == "__main__":
     main()
