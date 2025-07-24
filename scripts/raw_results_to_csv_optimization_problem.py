@@ -229,7 +229,8 @@ def summarize_optimization_problem_use_cases_sheet_per_family(summarize_dict) ->
 
 def summarize_optimization_problem_across_families(summarize_to_one_file_dict, family_data_with_chrom_path) -> None:
     new_main_raw_results_path = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/linear_vs_constant/")
-    old_main_raw_results_path = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/const_except_for_tested/")
+    old_main_raw_results_large_families_path = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results/const_except_for_tested/")
+    old_main_raw_results_small_families_path = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_raw_results_50_to_99/chromevol_raw_results_const_except_for_tested_50_to_99/")
 
     family_data_with_chrom_df = pd.read_csv(family_data_with_chrom_path, index_col=0)
 
@@ -237,6 +238,7 @@ def summarize_optimization_problem_across_families(summarize_to_one_file_dict, f
         if transition in [LABEL_BASE_NUM, LABEL_DEMI]:
             continue
 
+        print( f" =============== {transition} =============== ")
         sheet_per_family_run_const_path, sheet_per_family_run_linear_path, data_for_run_lin, output_folder = summarize_to_one_file_dict[transition]
 
         result_dict = {
@@ -258,7 +260,6 @@ def summarize_optimization_problem_across_families(summarize_to_one_file_dict, f
             f"new_linear_num_of_events": [],
             f"old_constant_num_of_events": [],
             f"old_linear_num_of_events": [],
-            f"old_ignore_num_of_events": [],
 
             f"new_linear_lin_intersection": [],
             f"old_linear_lin_intersection": [],
@@ -271,25 +272,30 @@ def summarize_optimization_problem_across_families(summarize_to_one_file_dict, f
             "family_size": [],
             "max_chrom": [],
             "min_chrom": [],
-            "dif_chrom": [],
+            "diff_chrom": [],
         }
 
         sheet_per_family_run_const_df = pd.ExcelFile(sheet_per_family_run_const_path)
         sheet_per_family_run_linear_df = pd.ExcelFile(sheet_per_family_run_linear_path)
-        old_runs_data_df = pd.read_csv(data_for_run_lin)
+        old_runs_data_df = pd.read_csv(data_for_run_lin, index_col=0)
 
         families_names = sheet_per_family_run_const_df.sheet_names
 
         for family_name in families_names:
+            print(f"        ===== {family_name} ===== ")
             family_run_const_df = pd.read_excel(sheet_per_family_run_const_df, sheet_name=family_name, index_col=0)
             family_run_linear_df = pd.read_excel(sheet_per_family_run_linear_df, sheet_name=family_name, index_col=0)
 
             new_run_const_num_of_events_path =  new_main_raw_results_path / transition / "run_const_with_lin_params" / family_name / "Results" / "expectations_second_round.txt"
-            new_run_linear_num_of_events_path =  new_main_raw_results_path / transition / "run_linear_with_lin_params" / family_name / "Results" / "expectations_second_round.txt"
+            new_run_linear_num_of_events_path =  new_main_raw_results_path / transition / "run_lin_with_const_params" / family_name / "Results" / "expectations_second_round.txt"
+
+            if int(family_data_with_chrom_df.at[family_name, "family_size"]) < 100:
+                old_main_raw_results_path = old_main_raw_results_small_families_path
+            else:
+                old_main_raw_results_path = old_main_raw_results_large_families_path
 
             old_linear_num_of_events_path = old_main_raw_results_path / family_name / transition / LABEL_LINEAR / "Results" / "expectations_second_round.txt"
-            old_ignore_num_of_events_path = old_main_raw_results_path / family_name / transition / LABEL_IGNORE / "Results" / "expectations_second_round.txt"
-            old_const_num_of_events_path = old_main_raw_results_path / "allConst" / "Results" / "expectations_second_round.txt"
+            old_const_num_of_events_path = old_main_raw_results_path / family_name / "allConst" / "Results" / "expectations_second_round.txt"
 
             # family name
             result_dict["family"].append(family_name)
@@ -309,7 +315,6 @@ def summarize_optimization_problem_across_families(summarize_to_one_file_dict, f
 
             result_dict[f"old_constant_num_of_events"].append(extract_num_of_events(old_const_num_of_events_path, transition))
             result_dict[f"old_linear_num_of_events"].append(extract_num_of_events(old_linear_num_of_events_path, transition))
-            result_dict[f"old_ignore_num_of_events"].append(extract_num_of_events(old_ignore_num_of_events_path, transition))
 
             # new runs values
             result_dict[f"new_constant_{LABEL_AICc}"].append(family_run_const_df.at[LABEL_AICc, "new_constant"])
@@ -334,7 +339,8 @@ def summarize_optimization_problem_across_families(summarize_to_one_file_dict, f
             ]
 
             aicc_values = [result_dict[k][-1] for k in aicc_keys]
-            best_model = aicc_keys[aicc_values.index(min(aicc_values))]
+            best_model_full_key = aicc_keys[aicc_values.index(min(aicc_values))]
+            best_model = best_model_full_key.removesuffix(f"_{LABEL_AICc}")
             result_dict[f"best_model_by_{LABEL_AICc}"].append(best_model)
 
             # family data
@@ -345,6 +351,7 @@ def summarize_optimization_problem_across_families(summarize_to_one_file_dict, f
 
         # Create and save dataframe
         df_summary = pd.DataFrame(result_dict)
+        output_folder = Path(output_folder)
         output_file = output_folder / f"{transition}_all_families_final_reciprocal_runs_summary.csv"
         df_summary.to_csv(output_file, index=False)
 
@@ -359,7 +366,7 @@ def extract_num_of_events(raw_results_expectations_path, label_transition) -> st
         ce_transition = label_transition_to_expectation_format_dict[label_transition]
         for line in reversed(lines):
             line = line.strip()
-            if ce_transition in line:
+            if line.startswith(ce_transition):
                 return line.split(": ")[-1].strip()
 
 
@@ -380,7 +387,7 @@ summarize_to_one_file_dict = {
     LABEL_GAIN: [
         "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_constant_summarize_optimization_problem.xlsx",
         "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_linear_summarize_optimization_problem.xlsx",
-        "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analy   sis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_data_for_run_lin_with_const_params.csv",
+        "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/gain_all_families_data_for_run_lin_with_const_params.csv",
         "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/gain/"
     ],
     LABEL_LOSS: [
@@ -390,11 +397,115 @@ summarize_to_one_file_dict = {
         "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/loss/"
     ]
 }
+
 family_data_with_chrom_path = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_input_data/family_data_with_chrom.csv"
 
+
+def analyse_new_vs_old_and_func_type(linear_analysis_root_folder):
+    for transition in LABEL_TRANSITIONS_LST:
+        if transition in [LABEL_BASE_NUM, LABEL_DEMI]:
+            continue
+
+        linear_analysis_root_path = Path(linear_analysis_root_folder)
+        transition_folder = linear_analysis_root_path / transition
+
+        df = pd.read_csv(transition_folder / f"{transition}_all_families_final_reciprocal_runs_summary.csv")
+        label_col = f"best_model_by_{LABEL_AICc}"
+
+        best_models = df[label_col].dropna().astype(str)
+
+        # 1. Pie chart: new vs old
+        model_group = best_models.str.startswith("new")
+        counts_new_old = model_group.value_counts()
+        counts_new_old.index = counts_new_old.index.map(lambda x: "new" if x else "old")
+
+        plt.figure()
+        counts_new_old.plot.pie(autopct="%1.1f%%", startangle=90)
+        plt.title(f"{transition}: Best model - new vs old")
+        plt.ylabel("")
+        plt.tight_layout()
+        plt.savefig(transition_folder / f"{transition}_best_model_new_vs_old_pie.png")
+        plt.close()
+
+        # 2. Pie chart: old models by function type
+        old_models = best_models[~best_models.str.startswith("new")]
+        old_types = old_models.str.split("_").str[-1]
+        old_counts = old_types.value_counts()
+
+        plt.figure()
+        old_counts.plot.pie(autopct="%1.1f%%", startangle=90)
+        plt.title(f"{transition}: Old best models - function type")
+        plt.ylabel("")
+        plt.tight_layout()
+        plt.savefig(transition_folder / f"{transition}_best_model_old_types_pie.png")
+        plt.close()
+
+        # 3. Pie chart: new models by function type
+        new_models = best_models[best_models.str.startswith("new")]
+        new_types = new_models.str.split("_").str[-1]
+        new_counts = new_types.value_counts()
+
+        plt.figure()
+        new_counts.plot.pie(autopct="%1.1f%%", startangle=90)
+        plt.title(f"{transition}: New best models - function type")
+        plt.ylabel("")
+        plt.tight_layout()
+        plt.savefig(transition_folder / f"{transition}_best_model_new_types_pie.png")
+        plt.close()
+
+
+def extract_opt_problem_use_cases(linear_analysis_root_folder):
+    for transition in LABEL_TRANSITIONS_LST:
+        if transition in [LABEL_BASE_NUM, LABEL_DEMI]:
+            continue
+
+        linear_analysis_root_path = Path(linear_analysis_root_folder)
+        transition_folder = linear_analysis_root_path / transition
+
+        opt_problem_families = {}
+
+        # Read both use-case CSVs and collect families
+        use_case_linear_best_minimal_slope = pd.read_csv(
+            transition_folder / f"{transition}_optimization_use_case_linear_best_minimal_slope.csv",
+            index_col=0
+        )
+        for family_name in use_case_linear_best_minimal_slope.index:
+            opt_problem_families[family_name] = "linear_best_minimal_slope"
+
+        use_case_constant_best_extreme_slope = pd.read_csv(
+            transition_folder / f"{transition}_optimization_use_case_constant_best_extreme_slope.csv",
+            index_col=0
+        )
+        for family_name in use_case_constant_best_extreme_slope.index:
+            opt_problem_families[family_name] = "constant_best_extreme_slope"
+
+        # Load the final summary and extract relevant rows
+        final_reciprocal_runs = pd.read_csv(
+            transition_folder / f"{transition}_all_families_final_reciprocal_runs_summary.csv"
+        )
+
+        rows = []
+        for family_name, opt_problem_type in opt_problem_families.items():
+            matching_rows = final_reciprocal_runs[final_reciprocal_runs["family"] == family_name]
+            if not matching_rows.empty:
+                matching_rows = matching_rows.copy()
+                matching_rows["opt_problem_type"] = opt_problem_type
+                rows.append(matching_rows)
+
+        if rows:
+            result_df = pd.concat(rows, ignore_index=True)
+            output_path = transition_folder / f"{transition}_optimization_problem_families_summary.csv"
+            result_df.to_csv(output_path, index=False)
+
+
+
+
+linear_analysis_root_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
 
 
 ### run
 # raw_results_to_csv(main_dict)
 # summarize_optimization_problem_use_cases_sheet_per_family(summarize_dict)
-summarize_optimization_problem_across_families(summarize_to_one_file_dict,family_data_with_chrom_path)
+# summarize_optimization_problem_across_families(summarize_to_one_file_dict,family_data_with_chrom_path)
+# extract_opt_problem_use_cases(linear_analysis_root_folder)
+analyse_new_vs_old_and_func_type(linear_analysis_root_folder)

@@ -1,6 +1,7 @@
 import ast
 import pandas as pd
 import argparse
+from pathlib import Path
 
 def linear_param_to_csv(csv_data_folder: str, analysis_output_folder: str, transitions_res_file_name: list[str]) -> None:
     for transition_res_file_name in transitions_res_file_name:
@@ -150,14 +151,77 @@ def linear_analysis_file(main_output_folder: str, raw_results_csvs_folder: str) 
         not_ignore_best_path = os.path.join(transition_folder, f"{transition}_ignore_not_best.csv")
         not_ignore_best_df.to_csv(not_ignore_best_path)
 
+#
+# main_output_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
+# raw_results_csvs_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
 
-main_output_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/"
-raw_results_csvs_folder = "/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/raw_results/modified_raw_results/"
-
-linear_analysis_file(main_output_folder, raw_results_csvs_folder)
-
-
-#### add the likelihood values in order to asses optimization problems
+# linear_analysis_file(main_output_folder, raw_results_csvs_folder)
 
 
+def prepare_reciprocal_runs_data_for_graphs(main_linear_analysis_folder: Path) -> None:
+    for transition in LABEL_TRANSITIONS_LST:
+        if transition in [LABEL_BASE_NUM, LABEL_DEMI]:
+            continue
 
+        transition_folder = main_linear_analysis_folder / transition
+        reciprocal_runs_summary_path = transition_folder / f"{transition}_all_families_final_reciprocal_runs_summary.csv"
+        reciprocal_runs_summary_df = pd.read_csv(reciprocal_runs_summary_path, index_col=0)
+
+        # Start building new DataFrame with the same index
+        new_df = pd.DataFrame(index=reciprocal_runs_summary_df.index)
+
+        # ---- Constant model ----
+        df_const = reciprocal_runs_summary_df[["new_constant_AICc", "old_constant_AICc"]]
+        new_df["constant_AICc"] = df_const.min(axis=1)
+        new_df["constant_new_or_old"] = df_const.apply(
+            lambda row: "new" if row["new_constant_AICc"] < row["old_constant_AICc"] else "old", axis=1
+        )
+
+        # ---- Ignore model ----
+        new_df["ignore_AICc"] = reciprocal_runs_summary_df["old_ignore_AICc"]
+
+        # ---- Linear model ----
+        df_linear = reciprocal_runs_summary_df[["new_linear_AICc", "old_linear_AICc"]]
+        new_df["linear_AICc"] = df_linear.min(axis=1)
+        new_df["linear_new_or_old"] = df_linear.apply(
+            lambda row: "new" if row["new_linear_AICc"] < row["old_linear_AICc"] else "old", axis=1
+        )
+
+        # Assign linear model parameters based on which AICc was chosen
+        def extract_linear_params(row):
+            if row["linear_new_or_old"] == "old":
+                slope = reciprocal_runs_summary_df.at[row.name, "old_linear_lin_slope"]
+                intercept = reciprocal_runs_summary_df.at[row.name, "old_linear_lin_intersection"]
+            else:
+                slope = reciprocal_runs_summary_df.at[row.name, "new_linear_lin_slope"]
+                intercept = reciprocal_runs_summary_df.at[row.name, "new_linear_lin_intersection"]
+            return pd.Series({
+                "lin_slope": slope,
+                "lin_intersection": intercept,
+                "lin_behavior_class": str(int(float(slope) > 0))
+            })
+
+        new_df[["lin_slope", "lin_intersection", "lin_behavior_class"]] = new_df.apply(extract_linear_params, axis=1)
+
+        # ---- Save full analysis ----
+        full_analysis_path = transition_folder / f"{transition}_reciprocal_runs_linear_analysis.csv"
+        new_df.to_csv(full_analysis_path)
+
+        # ---- Save families where linear AICc is best ----
+        best_lin_df = new_df[
+            (new_df["linear_AICc"].astype(float) < new_df["constant_AICc"].astype(float)) &
+            (new_df["linear_AICc"].astype(float) < new_df["ignore_AICc"].astype(float))
+        ]
+        best_lin_path = transition_folder / f"{transition}_reciprocal_runs_best_linear_AICc.csv"
+        best_lin_df.to_csv(best_lin_path)
+
+        # ---- Save families where ignore model is NOT the best ----
+        not_ignore_best_df = new_df[
+            (new_df["ignore_AICc"].astype(float) > new_df["linear_AICc"].astype(float)) |
+            (new_df["ignore_AICc"].astype(float) > new_df["constant_AICc"].astype(float))
+        ]
+        not_ignore_best_path = transition_folder / f"{transition}_reciprocal_runs_ignore_not_best.csv"
+        not_ignore_best_df.to_csv(not_ignore_best_path)
+
+main_linear_analysis_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/")
+prepare_reciprocal_runs_data_for_graphs(main_linear_analysis_folder)

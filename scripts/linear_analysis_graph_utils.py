@@ -209,15 +209,52 @@ def plot_line_functions_by_aicc(linear_analysis_df: DataFrame, save_fig_folder: 
 
 
 # ---main---
+# main_graphs_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/graphs/")
+# main_linear_analysis_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/")
+#
+# for transition in LABEL_TRANSITIONS_LST:
+#     input_folder_path = main_linear_analysis_folder / transition
+#     output_folder_path = main_graphs_folder / transition / "linear_analysis"
+#
+#     for file_path in input_folder_path.glob(f"{transition}_*.csv"):
+#         analysis_type = file_path.stem.replace(f"{transition}_", "")
+#         linear_analysis_df = pd.read_csv(file_path)
+#
+#         print("plot_binary_pie_chart")
+#         plot_binary_pie_chart(linear_analysis_df, output_folder_path, transition, analysis_type)
+#
+#         print("plot_slope_distribution_histogram")
+#         plot_slope_distribution_histogram(linear_analysis_df, output_folder_path, transition, analysis_type)
+#
+#         print("plot_line_functions")
+#         plot_line_functions(linear_analysis_df, output_folder_path, transition, analysis_type)
+#
+#         print("plot_line_functions_by_aicc")
+#         plot_line_functions_by_aicc(linear_analysis_df, output_folder_path, transition, analysis_type)
+
+
+
+# for after reciprocal runs
 main_graphs_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/graphs/")
 main_linear_analysis_folder = Path("/groups/itay_mayrose/noybandel/ChromEvol_project/chromevol_analysis/all_families_over_50_modified_chosen/analysis_from_const_except_for_tested/linear_analysis/")
 
 for transition in LABEL_TRANSITIONS_LST:
+    if transition in [LABEL_BASE_NUM, LABEL_DEMI]:
+        continue
     input_folder_path = main_linear_analysis_folder / transition
-    output_folder_path = main_graphs_folder / transition / "linear_analysis"
+    output_folder_path = main_graphs_folder / transition / "linear_analysis_best_model_after_reciprocal_runs"
+
+    file_names_dict = {
+        f"{transition}_reciprocal_runs_linear_analysis.csv": "linear_analysis",
+        f"{transition}_reciprocal_runs_best_linear_AICc.csv": "linear_AICc",
+        f"{transition}_reciprocal_runs_ignore_not_best.csv": "ignore_not_best"
+    }
 
     for file_path in input_folder_path.glob(f"{transition}_*.csv"):
-        analysis_type = file_path.stem.replace(f"{transition}_", "")
+        if file_path.name not in file_names_dict.keys():
+            continue
+
+        analysis_type = file_names_dict[file_path.name]
         linear_analysis_df = pd.read_csv(file_path)
 
         print("plot_binary_pie_chart")
